@@ -90,48 +90,142 @@ class ExaminationBoard extends Component {
                 </div>
 
                 <div style={{display: 'flex', }} >
-                    <table style={{width: '80%'}}>
-                        <tbody>
-                            <tr >
 
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white', border:'1px solid', display: "inline-block" }} id="1"></input></td>
+                <table class="GeneratedTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Rank</th>
+                            <th>Institution</th>
+                            <th>Department</th>
+                            <th>Post code</th>
+                            <th>Helység</th>
+                            <th>Street</th>
+                            <th>E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="8" style={{writingMode: "vertical-rl", textOrientation: "upright"}}>Examination</td>
+                            <td>Elnök</td>
+                            <td>B</td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%"}}></input></td>
+                            <td><input type="text" style={{width: "100%",}}></input></td>
 
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white', border:'1px solid' }}></input></td>
+                        </tr>
+                        <tr>
 
-                                <td ><input className="input" type="text" style={{backgroundColor: 'white',border:'1px solid' }}></input></td>
-                            </tr>
+                            <td>t.Elnök</td>
+                            <td>B</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
 
-                            <tr>
+                        </tr>
+                        <tr>
 
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white',border:'1px solid' }}></input></td>
+                            <td>tag</td>
+                            <td>K</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                        </tr>
+                        <tr>
 
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white',border:'1px solid' }}></input></td>
-                            </tr>
-                            <br/>
-                            <tr>
+                            <td>tag</td>
+                            <td>B</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                        </tr>
+                        <tr>
 
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white',border:'1px solid' }}></input></td>
-                            </tr>
-                            <br/>
-                            <tr>
+                            <td>tartalék</td>
+                            <td>K</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                        </tr>
+                        <tr>
 
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white',border:'1px solid' }}></input></td>
-                            </tr>
-                            <br/>
-                            <tr>
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white',border:'1px solid' }}></input></td>
-                            </tr>
-                            <br/>
-                            <tr>
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white',border:'1px solid' }}></input></td>
-                            </tr>
-                            <br/>
-                            <tr>
-                                <td ><input className="input" type="text" style={{ backgroundColor: 'white',border:'1px solid' }}></input></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                            <td>tartalék</td>
+                            <td>B</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                        </tr>
+                        <tr>
+
+                            <td>szakértő</td>
+                            <td>K</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                        </tr>
+                        <tr>
+
+                            <td>szakértő</td>
+                            <td>B</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
                 <div className="container-login-form-btna">
                     <button type="submit" className="login-form-btna" onChange={this.handleSubmit}>
