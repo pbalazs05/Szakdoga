@@ -42,56 +42,55 @@ class ExaminationBoard extends Component {
         content = <form onSubmit={this.SubmitHandler}>
             <div style={{marginLeft: "auto", marginRight: 'auto'}}>
                 <br />
-                <span className="info-titleuser">Javaslat a doktori (PhD) komplexvizsga bizottságának összetételére</span>
+                <span className="info-titleuser">Suggestion for the composition of the (Phd) complex exam examination board!</span>
                 <br />
-                <div style={{display: "inline-block", paddingInline:"2%", width:"33%", paddingBottom: "10px"}} >
-                    <span className="txt1"> Name of Candidate:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="JeloltNeve" value={name} onChange={e => this.setState({ name: e.target.value })} required />
+                <div className="ThreeDivInLine" >
+                    <span className="txt11"> Name of Candidate:</span>
+                    <input className="inputstilo" type="text"  name="JeloltNeve" value={name} onChange={e => this.setState({ name: e.target.value })} required />
                 </div>
 
-                <div style={{ display: "inline-block",paddingInline:"2%", width:"33%"}}  >
-                    <span className="txt1"> Doctoral School:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="doktoriiskola" value={doctoralSchool} onChange={e => this.setState({ doctoralSchool: e.target.value })} required />
+                <div className="ThreeDivInLine"  >
+                    <span className="txt11"> Doctoral School:</span>
+                    <input className="inputstilo" type="text"  name="doktoriiskola" value={doctoralSchool} onChange={e => this.setState({ doctoralSchool: e.target.value })} required />
                 </div>
 
-                <div style={{ display: "inline-block", paddingInline:"2%", width:"33%"}} >
-                    <span className="txt1"> Doctoral Program:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="program" value={doctoralProgram} onChange={e => this.setState({ doctoralProgram: e.target.value })} required />
+                <div className="ThreeDivInLine" >
+                    <span className="txt11"> Doctoral Program:</span>
+                    <input className="inputstilo" type="text"  name="program" value={doctoralProgram} onChange={e => this.setState({ doctoralProgram: e.target.value })} required />
                 </div>
 
-                <div style={{display: "inline-block", paddingInline:"2%", width:"33%", paddingBottom: "10px"}} >
-                    <span className="txt1"> Department:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="department" value={department} onChange={e => this.setState({ department: e.target.value })} required />
+                <div className="ThreeDivInLine" >
+                    <span className="txt11"> Department:</span>
+                    <input className="inputstilo" type="text"  name="department" value={department} onChange={e => this.setState({ department: e.target.value })} required />
                 </div>
 
-                <div style={{ display: "inline-block", paddingInline:"2%", width:"33%"}}  >
-                    <span className="txt1"> Consultant:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="consultant" value={consultant} onChange={e => this.setState({ consultant: e.target.value })} required />
+                <div className="ThreeDivInLine"  >
+                    <span className="txt11"> Consultant:</span>
+                    <input className="inputstilo" type="text"  name="consultant" value={consultant} onChange={e => this.setState({ consultant: e.target.value })} required />
                 </div>
 
-                <div style={{ display: "inline-block", paddingInline:"2%", width:"33%"}} >
-                    <span className="txt1"> Doctoral Topic:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="doctoralTopic" value={doctoralTopic} onChange={e => this.setState({ doctoralTopic: e.target.value })} required />
+                <div className="ThreeDivInLine" >
+                    <span className="txt11"> Doctoral Topic:</span>
+                    <input className="inputstilo" type="text"  name="doctoralTopic" value={doctoralTopic} onChange={e => this.setState({ doctoralTopic: e.target.value })} required />
                 </div>
 
-                <div style={{display: "inline-block", paddingInline:"2%", width:"33%", paddingBottom: "20px"}} >
-                    <span className="txt1"> The main subject of the exam:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="examMainSubject" value={examMainSubject} onChange={e => this.setState({ examMainSubject: e.target.value })} required />
+                <div className="ThreeDivInLine" >
+                    <span className="txt11"> The main subject of the exam:</span>
+                    <input className="inputstilo" type="text"  name="examMainSubject" value={examMainSubject} onChange={e => this.setState({ examMainSubject: e.target.value })} required />
                 </div>
 
-                <div style={{ display: "inline-block", paddingInline:"2%", width:"33%"}}  >
-                    <span className="txt1"> The side subject of the exam:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="examSideSubject" value={examSideSubject} onChange={e => this.setState({ examSideSubject: e.target.value })} required />
+                <div className="ThreeDivInLine"  >
+                    <span className="txt11"> The side subject of the exam:</span>
+                    <input className="inputstilo" type="text"  name="examSideSubject" value={examSideSubject} onChange={e => this.setState({ examSideSubject: e.target.value })} required />
                 </div>
 
-                <div style={{ display: "inline-block", paddingInline:"2%", width:"33%"}} >
-                    <span className="txt1"> The student has completed the required minimum of 90 credits:</span>
-                    <input style={{ backgroundColor: 'white', border:'1px solid'}} className="wrap-inputa" type="text"  name="creditFulfilled" value={creditFulfilled} onChange={e => this.setState({ creditFulfilled: e.target.value })} required />
+                <div className="ThreeDivInLine" >
+                    <span className="txt11"> The student has completed the required minimum of 90 credits:</span>
+                    <input className="inputstilo" type="text"  name="creditFulfilled" value={creditFulfilled} onChange={e => this.setState({ creditFulfilled: e.target.value })} required />
                 </div>
 
-                <div style={{display: 'flex', }} >
-
-                <table class="GeneratedTable">
+                <div style={{display: 'flex', width:"95%",  marginLeft:"auto", marginRight:"auto"}} >
+                <table className="GeneratedTable">
                     <thead>
                         <tr>
                             <th></th>
@@ -103,125 +102,124 @@ class ExaminationBoard extends Component {
                             <th>Institution</th>
                             <th>Department</th>
                             <th>Post code</th>
-                            <th>Helység</th>
+                            <th>Location</th>
                             <th>Street</th>
                             <th>E-mail</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td rowspan="8" style={{writingMode: "vertical-rl", textOrientation: "upright"}}>Examination</td>
-                            <td>Elnök</td>
-                            <td>B</td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%"}}></input></td>
-                            <td><input type="text" style={{width: "100%",}}></input></td>
+                            <td rowSpan="8" style={{writingMode: "vertical-rl", textOrientation: "upright", padding:"5px", textAlign: "center"}}  className="BoldFontStyle" >Examination</td>
+                            <td className="BoldFontStyle" >President</td>
+                            <td className="BoldFontStyle" >B</td>
+                            <td><input className="tdInput" type="text" ></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
 
                         </tr>
                         <tr>
 
-                            <td>t.Elnök</td>
-                            <td>B</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-
+                            <td className="BoldFontStyle" >Reserve President</td>
+                            <td className="BoldFontStyle" >B</td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
                         </tr>
                         <tr>
 
-                            <td>tag</td>
-                            <td>K</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
+                            <td className="BoldFontStyle" >Member</td>
+                            <td className="BoldFontStyle" >K</td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
                         </tr>
                         <tr>
 
-                            <td>tag</td>
-                            <td>B</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
+                            <td className="BoldFontStyle" >Member</td>
+                            <td className="BoldFontStyle" >B</td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
                         </tr>
                         <tr>
 
-                            <td>tartalék</td>
-                            <td>K</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
+                            <td className="BoldFontStyle" >Substitute</td>
+                            <td className="BoldFontStyle" >K</td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
                         </tr>
                         <tr>
 
-                            <td>tartalék</td>
-                            <td>B</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
+                            <td className="BoldFontStyle" >Substitute</td>
+                            <td className="BoldFontStyle" >B</td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
                         </tr>
                         <tr>
 
-                            <td>szakértő</td>
-                            <td>K</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
+                            <td className="BoldFontStyle" >Expert</td>
+                            <td className="BoldFontStyle" >K</td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
                         </tr>
                         <tr>
 
-                            <td>szakértő</td>
-                            <td>B</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                            <td>Cell</td>
+                            <td className="BoldFontStyle" >Expert</td>
+                            <td className="BoldFontStyle" >B</td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
+                            <td><input className="tdInput" type="text"></input></td>
                         </tr>
                     </tbody>
                 </table>

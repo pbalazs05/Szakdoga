@@ -48,185 +48,185 @@
     text-align: center;
 }
 
-    .flex-outer li{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
+.flex-outer li{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
-    .flex-outer > li > label,
-    .flex-outer li p {
-        flex: 1 0 20px;
-        max-width: 220px;
-    }
+.flex-outer > li > label,
+.flex-outer li p {
+    flex: 1 0 20px;
+    max-width: 220px;
+}
 
-    .flex-outer > li > label + * {
-        flex: 1 0 20px;
-    }
+.flex-outer > li > label + * {
+    flex: 1 0 20px;
+}
 
-    .flex-outer li button {
-        margin-left: auto;
-        padding: 8px 16px;
-        border: none;
-        background: #bebebe;
-        color: black;
-        margin-top: 10px;
-        text-transform: uppercase;
-        letter-spacing: .09em;
-        border-radius: 2px;
-    }
+.flex-outer li button {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background: #bebebe;
+    color: black;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+}
 
-    .submitbutton:hover {
+.submitbutton:hover {
     background-color: gray;
-            cursor: pointer;
-    }
+    cursor: pointer;
+}
 
-    .navnone1{
-        text-transform: uppercase;
-        display: block;
-        background: #bebebe;
-        padding: 15px;
-        color: black;
-        text-decoration: none;
-        text-align: center;
-    }
+.navnone1{
+    text-transform: uppercase;
+    display: block;
+    background: #bebebe;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
 
-    .nav-area a{
-        height: 100%;
-        text-transform: uppercase;
-        display: block;
-        background: #bebebe;
-        padding: 15px;
-        color: black;
-        text-decoration: none;
-        text-align: center;
-    }
+.nav-area a{
+    height: 100%;
+    text-transform: uppercase;
+    display: block;
+    background: #bebebe;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
 
-    .nav-area a:hover, .dropdown:hover .dropbtn {
+.nav-area a:hover, .dropdown:hover .dropbtn {
     background-color: gray;
-    }
+}
 
-    .targy{
-        width: 70%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
+.targy{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
 
-    }
+.inputs{
+    display: flex;
+    justify-content: center;
+}
 
-    .inputs{
-        display: flex;
-        justify-content: center;
-    }
-    .tables{
+.tables{
+    display: flex;
+    justify-content: center;
+}
 
-        display: flex;
-        justify-content: center;
+.content-table{
+    border-collapse:collapse;
+    width: 100%;
+}
 
-    }
-    .content-table{
-        border-collapse:collapse;
-        width: 100%;
-    }
-    .content-table td,.content-table th{
-        padding: 12px 15px;
-        border: 1px solid  #ddd;
-        text-align: center;
-    }
+.content-table td,.content-table th{
+    padding: 12px 15px;
+    border: 1px solid  #ddd;
+    text-align: center;
+}
 
-    .content-table th{
-        background-color: #bebebe;
-        color: black;
-        font-weight: normal;
-    }
+.content-table th{
+    background-color: #bebebe;
+    color: black;
+    font-weight: normal;
+}
 
-    .dropdownnav {
-        background: #bebebe;
-        height: 100%;
-        overflow: hidden;
-    }
+.dropdownnav {
+    background: #bebebe;
+    height: 100%;
+    overflow: hidden;
+}
 
-    .dropdownnav .dropbtnnav {
-        padding: 15px;
-        font-size: 15px;
-        text-transform: uppercase;
-        width: 100%;
-        height: 100%;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-    }
+.dropdownnav .dropbtnnav {
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
 
-    .dropdown-contentnav {
-        display: none;
-        position: absolute;
-        width: 26%;
-        max-width: 100%;
-        min-width: 100px;
-        background: #bebebe;
-        z-index: 1;
-    }
+.dropdown-contentnav {
+    display: none;
+    position: absolute;
+    width: 26%;
+    max-width: 100%;
+    min-width: 100px;
+    background: #bebebe;
+    z-index: 1;
+}
 
-    .dropdown-contentnav a {
-        float: none;
-        color: black;
-        background: #bebebe;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
+.dropdown-contentnav a {
+    float: none;
+    color: black;
+    background: #bebebe;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
 
-    .dropdown-contentnav a:hover {
-        background-color: gray;
-    }
+.dropdown-contentnav a:hover {
+    background-color: gray;
+}
 
-    .dropdownnav:hover .dropdown-contentnav {
-        display: block;
-    }
+.dropdownnav:hover .dropdown-contentnav {
+    display: block;
+}
 
-    .logoutbtn-wrap{
-        background: #bebebe;
-        height: 100%;
-        overflow: hidden;
-    }
+.logoutbtn-wrap{
+    background: #bebebe;
+    height: 100%;
+    overflow: hidden;
+}
 
-    .logoutbtn{
-        cursor: pointer;
-        padding: 15px;
-        font-size: 15px;
-        text-transform: uppercase;
-        width: 100%;
-        height: 100%;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-    }
+.logoutbtn{
+    cursor: pointer;
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
 
-    .logoutbtn:hover {
-        background: gray;
-    }
+.logoutbtn:hover {
+    background: gray;
+}
 
-    .formli{
-        padding: 5px 0px 5px;
-    }
+.formli{
+    padding: 5px 0px 5px;
+}
 
-    .kekselect{
-        width: 80%;
-        height: 40px;
-        position: relative;
-        background-color: #bebebe;
-        border: 1px solid #e6e6e6;
-        border-radius: 10px;
-    }
+.kekselect{
+    width: 80%;
+    height: 40px;
+    position: relative;
+    background-color: #bebebe;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+}
 
-  @media (max-width:600px){
+@media (max-width:600px){
     .nav-area ul li{
         width: 100%;
     }
@@ -241,19 +241,24 @@
         text-decoration: none;
         text-align: center;
     }
+
     .kekselect{
       width: 50%;
     }
+
     .content-table thead{
         display: none;
     }
+
     .content-table, .content-table tbody, .content-table tr, .content-table td{
         display: block;
         width: 100%;
     }
+
     .content-table tr{
         margin-bottom: 15px;
     }
+
     .content-table td{
         text-align: right;
         text-align: right;
@@ -280,27 +285,68 @@
 
     .dropdown-contentnav a{
         text-align: center;
-       }
+    }
 }
 
 
 table.GeneratedTable {
-  width: 100%;
-  background-color: #ffffff;
-  border-collapse: collapse;
-  border-width: 1px;
-  border-color: #000000;
-  border-style: solid;
-  color: #000000;
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    color: #000000;
 }
 
 table.GeneratedTable td, table.GeneratedTable th {
-  border-width: 1px;
-  border-color: #000000;
-  border-style: solid;
-  padding: 3px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    padding: 2px;
 }
 
 table.GeneratedTable thead {
-  background-color: #ecdea7;
+    background-color: #bebebe;
+}
+
+.tdInput{
+    width: 100%;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    min-height: 5vh;
+    font-size: 20px;
+}
+
+.inputstilo{
+    width: 80%;
+    height: 40px;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.ThreeDivInLine{
+    display: inline-block;
+    padding-inline: 2%;
+    width: 33%;
+    padding-bottom: 10px;
+}
+
+.txt11 {
+    padding: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: auto;
+    font-size: large;
+    line-height: 1.5;
+}
+.BoldFontStyle{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
 }
