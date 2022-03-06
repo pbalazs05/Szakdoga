@@ -31,7 +31,7 @@ function createFile(data,nev){
 
             // Save the buffer to a file
             //fs.writeFileSync(path.resolve(__dirname, 'OUTPUT3.docx'), outputDocumentBuffer);
-            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/output4.docx'),outputDocumentBuffer)
+            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/'+nev+' Examination Board Creating.docx'),outputDocumentBuffer)
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
@@ -161,8 +161,8 @@ router.post('/', async (req,res)=>{
                 expertTwoEmail: req.body.expertTwoEmail,
             },]
         };
-
-        createFile(datatoAdd);
+        console.log(req.body.username);
+        createFile(datatoAdd,req.body.username);
         await post.save();
         res.end();
     }catch(err){

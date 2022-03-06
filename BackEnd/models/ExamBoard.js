@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const ExamBoardSchema = mongoose.Schema({
+    username: {type: 'string', required: true},
     name:{type:String, required:true},
     doctoralSchool:{type:String, required:true},
     doctoralProgram: {type:String, required:true},

@@ -95,7 +95,5 @@ class UserData {
     SetUserID(ID) {
         sessionStorage.setItem('ID', ID);
     }
-
 }
-
 export default new UserData();
