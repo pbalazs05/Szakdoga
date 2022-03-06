@@ -190,7 +190,7 @@ class ExaminationBoard extends Component {
                     </thead>
                     <tbody>
                         <tr>
-                            <td rowSpan="8" style={{writingMode: "vertical-rl", textOrientation: "upright", padding:"5px", textAlign: "center"}}  className="BoldFontStyle" >Examination</td>
+                            <td rowSpan="8" style={{writingMode: "vertical-rl", textOrientation: "upright", padding:"5px", textAlign: "center"}}  className="BoldFontStyle" >Examination Board</td>
                             <td className="BoldFontStyle" >President</td>
                             <td className="BoldFontStyle" >B</td>
                             <td><input className="tdInput" type="text" name="presidentName" value={this.presidentName} onChange={e => this.setState({ presidentName: e.target.value })} required ></input></td>
