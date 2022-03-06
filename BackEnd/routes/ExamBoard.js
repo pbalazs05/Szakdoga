@@ -31,7 +31,7 @@ function createFile(data,nev){
 
             // Save the buffer to a file
             //fs.writeFileSync(path.resolve(__dirname, 'OUTPUT3.docx'), outputDocumentBuffer);
-            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/output3.docx'),outputDocumentBuffer)
+            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/output4.docx'),outputDocumentBuffer)
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
@@ -67,26 +67,103 @@ router.post('/', async (req,res)=>{
         creditFulfilled: req.body.creditFulfilled
     });
 
-
-
     try{
         const datatoAdd={
             List:[{
-                    name: post.name,
-                    doctoralSchool: post.doctoralSchool + " Tudományok Doktori Iskola",
-                    doctoralProgram: post.doctoralProgram,
-                    department: post.department,
-                    consultant: post.consultant,
-                    doctoralTopic: post.doctoralTopic,
-                    examMainSubject: post.examMainSubject,
-                    examSideSubject: post.examSideSubject,
-                    creditFulfilled: post.creditFulfilled
-                },
-            ]
+                name: post.name,
+                doctoralSchool: post.doctoralSchool + " Tudományok Doktori Iskola",
+                doctoralProgram: post.doctoralProgram,
+                department: post.department,
+                consultant: post.consultant,
+                doctoralTopic: post.doctoralTopic,
+                examMainSubject: post.examMainSubject,
+                examSideSubject: post.examSideSubject,
+                creditFulfilled: post.creditFulfilled,
+                //president
+                presidentName: req.body.presidentName,
+                presidentPositin: req.body.presidentPositin,
+                presidentRank: req.body.presidentRank,
+                presidentInstitution: req.body.presidentInstitution,
+                presidentDepartment: req.body.presidentDepartment,
+                presidentPostCode: req.body.presidentPostCode,
+                presidentLocation: req.body.presidentLocation,
+                presidentStreet: req.body.presidentStreet,
+                presidentEmail: req.body.presidentEmail,
+                //reservePresident
+                reservePresidentName: req.body.reservePresidentName,
+                reservePresidentPosition: req.body.reservePresidentPosition,
+                reservePresidentRank: req.body.reservePresidentRank,
+                reservePresidentInstitution: req.body.reservePresidentInstitution,
+                reservePresidentDepartment: req.body.reservePresidentDepartment,
+                reservePresidentPostCode: req.body.reservePresidentPostCode,
+                reservePresidentLocation: req.body.reservePresidentLocation,
+                reservePresidentStreet: req.body.reservePresidentStreet,
+                reservePresidentEmail: req.body.reservePresidentEmail,
+                //memberOne
+                memberOneName: req.body.memberOneName,
+                memberOnePosition: req.body.memberOnePosition,
+                memberOneRank: req.body.memberOneRank,
+                memberOneInstitution: req.body.memberOneInstitution,
+                memberOneDepartment: req.body.memberOneDepartment,
+                memberOnePostCode: req.body.memberOnePostCode,
+                memberOneLocation: req.body.memberOneLocation,
+                memberOneStreet: req.body.memberOneStreet,
+                memberOneEmail: req.body.memberOneEmail,
+                //memberTwo
+                memberTwoName: req.body.memberTwoName,
+                memberTwoPosition: req.body.memberTwoPosition,
+                memberTwoRank: req.body.memberTwoRank,
+                memberTwoIntitution: req.body.memberTwoIntitution,
+                memberTwoDepartment: req.body.memberTwoDepartment,
+                memberTwoPostCode: req.body.memberTwoPostCode,
+                memberTwoLocation: req.body.memberTwoLocation,
+                memberTwoStreet: req.body.memberTwoStreet,
+                memberTwoEmail: req.body.memberTwoEmail,
+                //SubstituteOne
+                substituteOneName: req.body.substituteOneName,
+                substituteOnePosition: req.body.substituteOnePosition,
+                substituteOneRank: req.body.substituteOneRank,
+                substituteOneInstitution: req.body.substituteOneInstitution,
+                substituteOneDepartment: req.body.substituteOneDepartment,
+                substituteOnePostCode: req.body.substituteOnePostCode,
+                substituteOneLocation: req.body.substituteOneLocation,
+                substituteOneStreet: req.body.substituteOneStreet,
+                substituteOneEmail: req.body.substituteOneEmail,
+                //SubstituteTwo
+                substituteTwoName: req.body.substituteTwoName,
+                substituteTwoPosition: req.body.substituteTwoPosition,
+                substituteTwoRank: req.body.substituteTwoRank,
+                substituteTwoIntitution: req.body.substituteTwoIntitution,
+                substituteTwoDepartment: req.body.substituteTwoDepartment,
+                substituteTwoPostCode: req.body.substituteTwoPostCode,
+                substituteTwoLocation: req.body.substituteTwoLocation,
+                substituteTwoStreet: req.body.substituteTwoStreet,
+                substituteTwoEmail: req.body.substituteTwoEmail,
+                //expertOne
+                expertOneName: req.body.expertOneName,
+                expertOnePosition: req.body.expertOnePosition,
+                expertOneRank: req.body.expertOneRank,
+                expertOneInstitution: req.body.expertOneInstitution,
+                expertOneDepartment: req.body.expertOneDepartment,
+                expertOnePostCode: req.body.expertOnePostCode,
+                expertOneLocation: req.body.expertOneLocation,
+                expertOneStreet: req.body.expertOneStreet,
+                expertOneEmail: req.body.expertOneEmail,
+                //experTwo
+                expertTwoName: req.body.expertTwoName,
+                expertTwoPosition: req.body.expertTwoPosition,
+                expertTwoRank: req.body.expertTwoRank,
+                expertTwoInstitution: req.body.expertTwoInstitution,
+                expertTwoDepartment: req.body.expertTwoDepartment,
+                expertTwoPostCode: req.body.expertTwoPostCode,
+                expertTwoLocation: req.body.expertTwoLocation,
+                expertTwoStreet: req.body.expertTwoStreet,
+                expertTwoEmail: req.body.expertTwoEmail,
+            },]
         };
 
         createFile(datatoAdd);
-       // await post.save();
+        await post.save();
         res.end();
     }catch(err){
         res.json({message:err});
