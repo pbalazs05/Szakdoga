@@ -1,7 +1,7 @@
 import '../../Style/App.css';
 import Nav from './Nav';
 import React, {useState, useEffect} from 'react';
-import ExaminationBoard from './FormPost/PostExaminationBoard';
+import ExaminationBoard from './UserPosts/PostExaminationBoard';
 
 
 

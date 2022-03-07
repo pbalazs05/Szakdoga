@@ -3,7 +3,7 @@ import '../../Style/App.css';
 import '../../Style/adminpage.css';
 import UserData from './UserDataGetSet';
 import DeIkLogo from '../../Style/deiklogo85x85.png'
-import PostLogoutUserForm from './FormPost/PostUserLogout';
+import PostLogoutUserForm from './UserPosts/PostUserLogout';
 
 function Nav() {
     return (

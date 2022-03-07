@@ -1,7 +1,7 @@
 import React from 'react';
 import DeIkLogo from '../../Style/DeIKLogo.png'
 import '../../Style/style.css';
-import PostLoginUserForm from './FormPost/PostUserLogin';
+import PostLoginUserForm from './UserPosts/PostUserLogin';
 
 function LoginUser() {
     return (

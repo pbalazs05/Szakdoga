@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../Style/App.css';
-import PostForm from './FormPost/PostForm'
+import PostForm from './UserPosts/PostForm'
 import Nav from './Nav';
 import Userdata from './UserDataGetSet';
 

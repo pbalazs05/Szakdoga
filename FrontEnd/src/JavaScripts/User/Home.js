@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../Style/adminpage.css';
 import Nav from './Nav';
 import UserData from './UserDataGetSet';
-import UserChangePass from './FormPost/PostUserChangePass'
+import UserChangePass from './UserPosts/PostUserChangePass'
 
 class Home extends Component {
     constructor(props) {
