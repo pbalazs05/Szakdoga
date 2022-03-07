@@ -500,7 +500,6 @@ class PostUserAdministration extends Component {
                                             </tr>
                                         </thead>
 
-
                                         <tbody>
                                             {this.props.items.map(item => (
                                                 <tr key={item._id}>

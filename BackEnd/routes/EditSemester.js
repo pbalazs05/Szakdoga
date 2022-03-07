@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
     try {
         const sem = await semester.findOne();
         res.send(sem)
-
     } catch (err) {
         res.json({ message: err });
     }
@@ -39,9 +38,9 @@ router.get('/:user/getdates', async (req, res) => {
         const endDate = new Date(sem.endDate);
         var response;
 
-        if(currDate < startDate){
+        if (currDate < startDate) {
             response = false;
-        } else if(currDate > endDate){
+        } else if (currDate > endDate) {
             response = false;
         } else {
             response = true;

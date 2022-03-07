@@ -45,7 +45,6 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/addnewsemester', async (req, res) => {
-
     try {
         db.collection('users').updateMany(
             {}, // query

@@ -1,9 +1,6 @@
 const express = require('express');
-
-
 const router = express.Router();
 const Post =require('../models/Subjects');
-
 
 //get back all the posts
 router.get('/', async (req,res) => {
@@ -19,7 +16,6 @@ router.post('/', async (req,res)=>{
     const post = new Post ({
         Subject: req.body.Subject,
         Teacher: req.body.Teacher,
-
     });
     try{
     const savedPost = await post.save();
@@ -27,8 +23,6 @@ router.post('/', async (req,res)=>{
     }catch(err){
         res.json({message:err});
     }
-
-
 });
 
 module.exports=router;

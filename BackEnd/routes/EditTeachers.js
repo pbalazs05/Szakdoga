@@ -5,13 +5,11 @@ if (process.env.NODE_ENV !== 'production') { //ha a környezet nem lenne tölten
 const express = require('express');
 const router = express.Router();
 
-
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 
 
 router.post('/', async (req, res) => {
-
     try {
         var waitforgetTeacherbyID = new Promise((resolve, reject) => {
             const cursor = db.collection('nameandemails').find({ _id: mongoose.Types.ObjectId(req.body.EditTeacherID) });
@@ -38,7 +36,6 @@ router.post('/', async (req, res) => {
         res.json({ message: err });
     }
 });
-
 
 module.exports = router;
 

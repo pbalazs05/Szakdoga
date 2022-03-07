@@ -2,14 +2,14 @@ const express = require("express");
 
 const router = express.Router();
 const Post = require('../models/ExamBoard');
-var  fs = require('fs');
+var fs = require('fs');
 
 const path = require('path');
 const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
 
 //function to read a template file and create a new with input data
-function createFile(data,username){
+function createFile(data, username) {
     //const templateFile = fs.readFileSync(path.resolve(__dirname, 'phdTemplate.docx'), 'binary');
     const templateFile = fs.readFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/phdTemplate.docx'), 'binary');
     const zip = new PizZip(templateFile);
@@ -31,31 +31,31 @@ function createFile(data,username){
 
             // Save the buffer to a file
             //fs.writeFileSync(path.resolve(__dirname, 'OUTPUT3.docx'), outputDocumentBuffer);
-            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/'+username+' '+'Examination Board Creating.docx'),outputDocumentBuffer)
+            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/' + username + ' ' + 'Examination Board Creating.docx'), outputDocumentBuffer)
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
             console.error(error)
         }
-    } catch(error) {
+    } catch (error) {
         console.error(`ERROR Loading Template:`);
         console.error(error);
     }
 }
 
 
-router.get('/', async (req,res) => {
-    try{
+router.get('/', async (req, res) => {
+    try {
         const posts = await Post.find();
         res.json(posts);
-    }catch(err){
-        res.json({message:err});
+    } catch (err) {
+        res.json({ message: err });
     }
 });
 
 //submits a post
-router.post('/', async (req,res)=>{
-    const post = new Post ({
+router.post('/', async (req, res) => {
+    const post = new Post({
         name: req.body.name,
         doctoralSchool: req.body.doctoralSchool,
         doctoralProgram: req.body.doctoralProgram,
@@ -67,9 +67,9 @@ router.post('/', async (req,res)=>{
         creditFulfilled: req.body.creditFulfilled
     });
 
-    try{
-        const datatoAdd={
-            List:[{
+    try {
+        const datatoAdd = {
+            List: [{
                 name: post.name,
                 doctoralSchool: post.doctoralSchool + " Tudományok Doktori Iskola",
                 doctoralProgram: post.doctoralProgram,
@@ -161,12 +161,12 @@ router.post('/', async (req,res)=>{
                 expertTwoEmail: req.body.expertTwoEmail,
             },]
         };
-        createFile(datatoAdd,req.body.username);
+        createFile(datatoAdd, req.body.username);
         await post.save();
         res.end();
-    }catch(err){
-        res.json({message:err});
+    } catch (err) {
+        res.json({ message: err });
     }
 });
 
-module.exports=router;
+module.exports = router;
