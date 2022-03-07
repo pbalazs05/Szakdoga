@@ -61,7 +61,7 @@ app.use(session({
 app.use('/api/posts', postsRoute);
 app.use('/api/subjects', SubjectRoute);
 app.use('/api/NameAndEmail', NameAndEmailRoute);
-app.use('/api/userlogin',UserLoginRoute);
+app.use('/api/user-login',UserLoginRoute);
 app.use('/api/adminlogin',AdminLoginRoute);
 app.use('/api/RegUser', UserRegRoute);
 app.use('/api/RegAdmin', AdminRegRoute);

@@ -32,7 +32,7 @@ function App() {
             <div>
                 <Switch>
                     <Route path="/ForgotPass" component={ForgetPass} />
-                    <Route path="/UserLogin" component={UserLogin} />
+                    <Route path="/user-login" component={UserLogin} />
                     <Route path="/AdminLogin" component={AdminLogin} />
                     <Route path="/subjectupdate" component={SubjectUpdate} />
                     <SecuredRouteAsAdmin path="/AdminPageRegUser" component={AdminPageRegUser} />

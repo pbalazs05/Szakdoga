@@ -15,7 +15,7 @@ class PostLogoutUserForm extends Component {
         const { userredirect } = this.state;
         if (userredirect) {
             sessionStorage.clear();
-            return <Redirect to='/userlogin' />;
+            return <Redirect to='/user-login' />;
         }
         return (
             <form className="logoutbtn-wrap" onSubmit={this.SubmitHandlerLogoutUser}>

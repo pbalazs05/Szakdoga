@@ -65,7 +65,7 @@ router.post('/', async (req,res)=>{
                 <li>Username: ${User.username}</li>
                <li>Password: ${pass}</li>
              </ul>
-            <h3>You can login at: https://localhost:50111/userlogin.</h3>`;
+            <h3>You can login at: https://localhost:50111/user-login.</h3>`;
             const subject = 'Registration data';
             SendEmail(output,req.body.email,subject);
             res.send("Succes User registration!");
@@ -80,7 +80,7 @@ router.post('/', async (req,res)=>{
             <li>Username: ${username[0]}</li>
            <li>Password: ${pass}</li>
          </ul>
-        <h3>You can login at: https://localhost:50111/userlogin.</h3>`;
+        <h3>You can login at: https://localhost:50111/user-login.</h3>`;
         const subject = 'Registration data';
         SendEmail(output,req.body.email,subject);
         res.send("Succes User registration!")

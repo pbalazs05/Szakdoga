@@ -28,7 +28,7 @@ class PostLoginUserForm extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/userlogin', this.state)
+        axios.post('https://localhost:50111/api/user-login', this.state)
             .then(response => {
                 UserData.SetUserLastName(response.data.lastname);
                 UserData.SetUserFistName(response.data.firstname);

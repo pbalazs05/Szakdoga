@@ -10,7 +10,7 @@ function refreshPage() {
 
 async function Check() {
     const token = ({ token: auth.isAuthenticatedUser() });
-    await axios.post('https://localhost:50111/api/userlogin/allow/' + UserData.GetUserID(), token).then(() => {
+    await axios.post('https://localhost:50111/api/user-login/allow/' + UserData.GetUserID(), token).then(() => {
     }).catch(error => {
         sessionStorage.clear();
         refreshPage();
@@ -32,7 +32,7 @@ export const SecuredRouteAsUser = ({
                     return (
                         <Redirect
                             to={{
-                                pathname: "/userlogin",
+                                pathname: "/user-login",
                             }}
                         />
                     );

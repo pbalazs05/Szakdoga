@@ -20,7 +20,7 @@ function MainPage() {
                         </div>
                         <br />
                         <div className="wrap-input">
-                            <a href="/userlogin">
+                            <a href="/user-login">
                                 Student
                             </a>
                         </div>
