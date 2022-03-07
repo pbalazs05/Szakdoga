@@ -17,10 +17,10 @@ class PostRegAdminForm extends Component {
     }
 
     changeHandlerStartDate = (e) => {
-        if(this.state.id === undefined){
+        if (this.state.id === undefined) {
             this.setState({
                 startDate: e.target.value,
-                endDate : this.props.semesterData.endDate,
+                endDate: this.props.semesterData.endDate,
                 errorChange: false,
                 startDateError: false,
                 succes: false,
@@ -38,10 +38,10 @@ class PostRegAdminForm extends Component {
     }
 
     changeHandlerEndDate = (e) => {
-        if(this.state.id === undefined){
+        if (this.state.id === undefined) {
             this.setState({
-                endDate : e.target.value,
-                startDate : this.props.semesterData.startDate,
+                endDate: e.target.value,
+                startDate: this.props.semesterData.startDate,
                 errorChange: false,
                 startDateError: false,
                 succes: false,
@@ -62,16 +62,16 @@ class PostRegAdminForm extends Component {
     SubmitHandler = e => {
         e.preventDefault();
         if (this.state.id === undefined) {
-            this.setState({ errorChange : true, startDateError: false, serverError: false, succes: false })
-        } else if(this.state.startDate >= this.state.endDate){
-            this.setState({ startDateError : true, succes: false, serverError: false, errorChange : false})
+            this.setState({ errorChange: true, startDateError: false, serverError: false, succes: false })
+        } else if (this.state.startDate >= this.state.endDate) {
+            this.setState({ startDateError: true, succes: false, serverError: false, errorChange: false })
         } else {
             axios.post('https://localhost:50111/api/editsemester', this.state)
                 .then(response => {
-                    this.setState({succes: true, errorChange : false, serverError: false, startDateError: false})
+                    this.setState({ succes: true, errorChange: false, serverError: false, startDateError: false })
                 })
                 .catch(error => {
-                    this.setState({serverError: true, succes: false, errorChange : false, startDateError: false})
+                    this.setState({ serverError: true, succes: false, errorChange: false, startDateError: false })
                 })
         }
     }
@@ -80,8 +80,8 @@ class PostRegAdminForm extends Component {
         var content;
         const errorC = this.state.errorChange ? <span className="error-mess">&#x2612; No change detected!</span> : null;
         const errorS = this.state.startDateError ? <span className="error-mess">&#x2612; The start date cannot be greater than or equal with the end date!</span> : null;
-        const succesM =  this.state.succes ? <span className="succes-mess">&#9745; Success Subject Registration period created!</span> : null;
-        const errorServer =  this.state.serverError ? <span className="error-mess">&#x2612; Server error occurred! Subject Registration period creation failed!</span> : null;
+        const succesM = this.state.succes ? <span className="succes-mess">&#9745; Success Subject Registration period created!</span> : null;
+        const errorServer = this.state.serverError ? <span className="error-mess">&#x2612; Server error occurred! Subject Registration period creation failed!</span> : null;
         if (this.props.semesterData._id !== undefined) {
             const { startDate, endDate } = this.state
             content = <form onSubmit={this.SubmitHandler}>
@@ -133,12 +133,12 @@ class PostRegAdminForm extends Component {
         return (
             <div>
                 <br />
-                { errorServer }
-                { succesM }
-                { errorC }
-                { errorS }
+                {errorServer}
+                {succesM}
+                {errorC}
+                {errorS}
                 <br />
-                { content}
+                {content}
             </div>
         )
     }

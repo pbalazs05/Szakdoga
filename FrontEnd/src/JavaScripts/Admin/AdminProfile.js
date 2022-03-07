@@ -16,11 +16,11 @@ function AdminProfile() {
                         <br />
                         <span className="inf-title">
                             Admin Profile
-			</span>
+                        </span>
                         <br /><br /><br />
                         <span className="title2">
                             Personal Data
-			</span>
+                        </span>
                         <br />
                         <span className="ititle">Email: {AdminData.GetAdminEmail()}</span>
                         <br />
@@ -32,7 +32,7 @@ function AdminProfile() {
                         <br /><br /><br />
                         <span className="title2">
                             Change Password
-			</span>
+                        </span>
                         <PostAdminChangePassUserForm />
                     </div>
                 </div>

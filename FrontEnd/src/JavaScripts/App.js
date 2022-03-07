@@ -3,7 +3,7 @@ import '../Style/App.css';
 import Felvetel from './User/SubjectRegistration';
 import Home from './User/Home';
 import Abszolvalt from './User/DegreeConfermentProcedure';
-import AdminLogin from './Admin/login_admin';
+import AdminLogin from './Admin/AdminLogin';
 import UserLogin from './User/UserLogin';
 import AdminPage from './Admin/AdminPage';
 import DoctoralPrograms from './Admin/DoctoralPrograms';

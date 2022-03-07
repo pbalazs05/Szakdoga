@@ -1,21 +1,19 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from './AdminNav';
 import PostSemesterForm from './PostFormsJS/PostSemesterForm'
 
 function Semester() {
-    useEffect(()=>{
+    useEffect(() => {
         fetchdates();
-      },[]);
-      
-    const [semesterData,setSemesterData] = useState([]);
+    }, []);
 
-    const fetchdates = async () =>{
-        const data = await fetch(
-            'https://localhost:50111/api/editsemester'
-          );
-          const semesterData = await data.json();    
-          setSemesterData(semesterData); 
-      };
+    const [semesterData, setSemesterData] = useState([]);
+
+    const fetchdates = async () => {
+        const data = await fetch('https://localhost:50111/api/editsemester');
+        const semesterData = await data.json();
+        setSemesterData(semesterData);
+    };
 
     return (
         <div>
@@ -27,8 +25,8 @@ function Semester() {
                         <br />
                         <span className="inf-title">
                             Subject Registration period
-			            </span>
-                        <PostSemesterForm semesterData = {semesterData}/>
+                        </span>
+                        <PostSemesterForm semesterData={semesterData} />
                     </div>
                 </div>
             </div>

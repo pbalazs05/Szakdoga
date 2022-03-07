@@ -31,7 +31,7 @@ function createFile(data,username){
 
             // Save the buffer to a file
             //fs.writeFileSync(path.resolve(__dirname, 'OUTPUT3.docx'), outputDocumentBuffer);
-            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/'+username+' Examination Board Creating.docx'),outputDocumentBuffer)
+            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/'+username+' '+'Examination Board Creating.docx'),outputDocumentBuffer)
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);

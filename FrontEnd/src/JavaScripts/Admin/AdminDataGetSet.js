@@ -1,6 +1,6 @@
 class AdminData {
     SetAdminID(ID) {
-      sessionStorage.setItem('AdminID', ID);
+        sessionStorage.setItem('AdminID', ID);
     }
 
     GetAdminID() {
@@ -38,6 +38,6 @@ class AdminData {
     GetAdminUserName() {
         return sessionStorage.getItem('AdminUsername');
     }
-  }
-  
-  export default new AdminData();
+}
+
+export default new AdminData();

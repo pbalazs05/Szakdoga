@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 const Params = new URLSearchParams(window.location.search);
 
 class Subjectupdate extends Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -20,48 +19,48 @@ class Subjectupdate extends Component {
     }
     async componentDidMount() {
         axios.get('https://localhost:50111/api/posts/' + Params.get('uid') + '/' + Params.get('pid'))
-            .then(res => {
-                if (res.data === "error" || res.data.length === 0) {
-                    this.setState({
-                        state: -2
-                    })
-                    console.log("Cannot find post")
-                }
-                else {
-                    const data = res.data;
-                    this.setState({
-                        state: data[0].state,
-                        tname: data[0].oktato,
-                        subject: data[0].targy
-                    })
+        .then(res => {
+            if (res.data === "error" || res.data.length === 0) {
+                this.setState({
+                    state: -2
+                })
+                console.log("Cannot find post")
+            }
+            else {
+                const data = res.data;
+                this.setState({
+                    state: data[0].state,
+                    tname: data[0].oktato,
+                    subject: data[0].targy
+                })
 
-                    axios.get('https://localhost:50111/api/getusers/' + Params.get('uid'))
-                        .then(res => {
-                            if (res.data === "error" || res.data.length === 0) {
-                                this.setState({
-                                    state: -2
-                                })
-                                console.log("Cannot find post")
-                            }
+                axios.get('https://localhost:50111/api/getusers/' + Params.get('uid'))
+                    .then(res => {
+                        if (res.data === "error" || res.data.length === 0) {
                             this.setState({
-                                stdName: res.data
+                                state: -2
                             })
-
-
-                            axios.get('https://localhost:50111/api/nameandemail/' + Params.get('aid'))
-                                .then(res => {
-                                    const data = res.data;
-                                    const Name = data[0].TeacherName
-                                    if (Name === this.state.tname) {
-                                        this.setState({
-                                            valid: true
-                                        })
-                                    }
-                                })
+                            console.log("Cannot find post")
+                        }
+                        this.setState({
+                            stdName: res.data
                         })
-                }
 
-            })
+
+                        axios.get('https://localhost:50111/api/nameandemail/' + Params.get('aid'))
+                            .then(res => {
+                                const data = res.data;
+                                const Name = data[0].TeacherName
+                                if (Name === this.state.tname) {
+                                    this.setState({
+                                        valid: true
+                                    })
+                                }
+                            })
+                    })
+            }
+
+        })
     }
 
     SubmitHandler = e => {
@@ -82,10 +81,8 @@ class Subjectupdate extends Component {
     }
 
     render() {
-
         if (this.state.valid && this.state.state === 0) {
             return (
-
                 <div className="centered">
                     <style>{'body { background-color: #EBECF0; }'}</style>
                     <div className="limiter">
@@ -118,7 +115,6 @@ class Subjectupdate extends Component {
                         </div>
                     </div>
                 </div>
-
             );
         }
         else if (this.state.valid && (this.state.state === 1 || this.state.state === 2)) {

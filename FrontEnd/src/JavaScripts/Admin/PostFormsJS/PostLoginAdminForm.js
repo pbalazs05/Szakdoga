@@ -20,8 +20,10 @@ class PostLoginAdminForm extends Component {
     }
 
     changeHandler = (e) => {
-        this.setState({ [e.target.name]: e.target.value,
-            error:false })
+        this.setState({
+            [e.target.name]: e.target.value,
+            error: false
+        })
     }
     SubmitHandler = e => {
         e.preventDefault()
@@ -36,7 +38,7 @@ class PostLoginAdminForm extends Component {
                 this.setState({ redirect: true })
             })
             .catch(error => {
-                this.setState({error : true})
+                this.setState({ error: true })
             })
     }
 
@@ -51,12 +53,12 @@ class PostLoginAdminForm extends Component {
                 {this.state.error &&
                     <div className="login-error">
                         &#x2612; Incorrect username or password.
-                        </div>
+                    </div>
                 }
                 <div>
                     <span className="txt1">
                         Username
-						</span>
+                    </span>
                 </div>
 
                 <div className="wrap-input">
@@ -68,7 +70,7 @@ class PostLoginAdminForm extends Component {
                 <div>
                     <span className="txt1">
                         Password
-						</span>
+                    </span>
                 </div>
 
                 <div className="wrap-input">
@@ -77,7 +79,7 @@ class PostLoginAdminForm extends Component {
                 <div className="container-login-form-btn">
                     <button type="submit" className="login-form-btn">
                         Login
-						</button>
+                    </button>
                 </div>
                 <ul className="list-containeru">
                     <li>

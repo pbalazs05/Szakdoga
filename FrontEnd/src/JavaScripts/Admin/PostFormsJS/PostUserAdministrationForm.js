@@ -92,7 +92,6 @@ class PostUserAdministration extends Component {
     }
 
     handleClick = event => {
-
         const datas = event.target.dataset.mssg.split('|');
         this.setState({
             edit: !this.state.edit,

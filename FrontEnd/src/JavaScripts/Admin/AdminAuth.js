@@ -1,10 +1,10 @@
 class Auth {
     loggedIn(Status) {
-      sessionStorage.setItem("LoginStatusAdmin", Status);
+        sessionStorage.setItem("LoginStatusAdmin", Status);
     }
 
     isAuthenticated() {
-      return sessionStorage.getItem("LoginStatusAdmin");
+        return sessionStorage.getItem("LoginStatusAdmin");
     }
 }
 
