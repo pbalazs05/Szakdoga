@@ -9,7 +9,7 @@ const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
 
 //function to read a template file and create a new with input data
-function createFile(data,nev){
+function createFile(data,username){
     //const templateFile = fs.readFileSync(path.resolve(__dirname, 'phdTemplate.docx'), 'binary');
     const templateFile = fs.readFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/phdTemplate.docx'), 'binary');
     const zip = new PizZip(templateFile);
@@ -31,7 +31,7 @@ function createFile(data,nev){
 
             // Save the buffer to a file
             //fs.writeFileSync(path.resolve(__dirname, 'OUTPUT3.docx'), outputDocumentBuffer);
-            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/'+nev+' Examination Board Creating.docx'),outputDocumentBuffer)
+            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/'+username+' Examination Board Creating.docx'),outputDocumentBuffer)
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
@@ -161,7 +161,6 @@ router.post('/', async (req,res)=>{
                 expertTwoEmail: req.body.expertTwoEmail,
             },]
         };
-        console.log(req.body.username);
         createFile(datatoAdd,req.body.username);
         await post.save();
         res.end();
