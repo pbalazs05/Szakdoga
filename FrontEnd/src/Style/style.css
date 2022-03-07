@@ -3,6 +3,7 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
+
 .centered {
   display:flex;
   position:absolute;
@@ -161,7 +162,6 @@ img {
 
   font-style: bold;
   line-height: 1.2;
-
 }
 
 .img-wrap
@@ -176,6 +176,7 @@ img {
 	align-items: center;
 	Justify-content: center;
 }
+
 .img
 {
   width: auto;
@@ -188,42 +189,40 @@ img {
 }
 
 @media only screen and (max-width: 540px) {
-  /* For mobile phones: */
-  .wrap-input{
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  position: relative;
-  margin-right: 20px;
-  }
-  .img
-  {
-	  object-fit: contain;
-	  pointer-events: none;
-	  position: sticky;
-	  top:0;
-	  left:0;
-  }
-  .container-login{
-  width: auto;
-  height: auto;
-  min-width: 10vh;
-  min-height: 10vh;
- }
+/* For mobile phones: */
+    .wrap-input{
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        margin-right: 20px;
+    }
+    .img
+    {
+        object-fit: contain;
+        pointer-events: none;
+        position: sticky;
+        top:0;
+        left:0;
+    }
+    .container-login{
+        width: auto;
+        height: auto;
+        min-width: 10vh;
+        min-height: 10vh;
+    }
 
- .login-form-title {
-	 font-size: 20px;
- }
+    .login-form-title {
+        font-size: 20px;
+    }
 }
 
-.error-messages
-{
+.error-messages{
   color: red;
   padding: 0 20px;
 }
 
-.languageform
-{
+.languageform{
 	background-color: #EBECF0;
 }
 

@@ -1,47 +1,51 @@
-    * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-    .wrap-login .btnyes{
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
-        padding: 8px 16px;
-        border: none;
-        width: 70px;
-        justify-content: center;
+.wrap-login .btnyes{
 
-        background: rgb(133, 128, 128);
-        color: #f2f2f2;
-        margin-top: 10px;
-        text-transform: uppercase;
-        letter-spacing: .09em;
-        border-radius: 2px;
-        display: flex;
-    }
-    .wrap-login .btnno{
+    padding: 8px 16px;
+    border: none;
+    width: 70px;
+    justify-content: center;
 
-        padding: 8px 16px;
+    background: rgb(133, 128, 128);
+    color: #f2f2f2;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+    display: flex;
+}
 
-        border: none;
-        width: 70px;
-        justify-content: center;
+.wrap-login .btnno{
 
-        background: rgb(133, 128, 128);
-        color: #f2f2f2;
-        margin-top: 10px;
-        text-transform: uppercase;
-        letter-spacing: .09em;
-        border-radius: 2px;
-        display: flex;
-        }
-    .btnyes:hover {
-        background-color: green;
-        color: white;
-    }
-    .btnno:hover {
-        background-color: #cf3115;
-        color: white;
-    }
+    padding: 8px 16px;
+
+    border: none;
+    width: 70px;
+    justify-content: center;
+
+    background: rgb(133, 128, 128);
+    color: #f2f2f2;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+    display: flex;
+}
+
+.btnyes:hover {
+    background-color: green;
+    color: white;
+}
+
+.btnno:hover {
+    background-color: #cf3115;
+    color: white;
+}
 
 .centered {
     display:flex;
@@ -104,15 +108,18 @@ label {
     background-position: center;
     background-size: cover;
 }
+
 .sbtform{
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 12px;
 }
+
 .btnyes{
     display: flex;
     justify-content: flex-start;
 }
+
 .wrap-login{
     width: 540px;
     background: #fff;
@@ -120,7 +127,7 @@ label {
     position: relative;
 }
 
-.login-form {
+.login-form{
     width: 100%;
 }
 
