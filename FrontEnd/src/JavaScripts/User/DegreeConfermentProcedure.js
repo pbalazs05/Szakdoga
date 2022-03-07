@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../Style/App.css';
-import Nav from './Nav';
+import Nav from './NavigationBar';
 
 function Abszolvalt() {
     return (

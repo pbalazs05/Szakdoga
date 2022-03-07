@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../Style/App.css';
-import Nav from './Nav';
+import Nav from './NavigationBar';
 import Userdata from './UserDataGetSet';
 
 function TakenCourses() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../Style/adminpage.css';
-import Nav from './Nav';
+import Nav from './NavigationBar';
 import UserData from './UserDataGetSet';
 import UserChangePass from './UserPosts/PostUserChangePass'
 
