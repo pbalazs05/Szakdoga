@@ -5,11 +5,11 @@ const ExamBoardSchema = mongoose.Schema({
     name: { type: 'string', required: true },
     doctoralSchool: { type: 'string', required: true },
     doctoralProgram: { type: 'string', required: true },
-    department: { type: 'string', required: true },
-    consultant: { type: 'string', required: true },
+    courseType: { type: 'string', required: true },
+    supervisor: { type: 'string', required: true },
     doctoralTopic: { type: 'string', required: true },
-    examMainSubject: { type: 'string', required: true },
-    examSideSubject: { type: 'string', required: true },
+    examMajorSubject: { type: 'string', required: true },
+    examMinorSubject: { type: 'string', required: true },
     creditFulfilled: { type: 'string', required: true },
 
     //president

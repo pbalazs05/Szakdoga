@@ -59,11 +59,11 @@ router.post('/', async (req, res) => {
         name: req.body.name,
         doctoralSchool: req.body.doctoralSchool,
         doctoralProgram: req.body.doctoralProgram,
-        department: req.body.department,
-        consultant: req.body.consultant,
+        courseType: req.body.courseType,
+        supervisor: req.body.supervisor,
         doctoralTopic: req.body.doctoralTopic,
-        examMainSubject: req.body.examMainSubject,
-        examSideSubject: req.body.examSideSubject,
+        examMajorSubject: req.body.examMajorSubject,
+        examMinorSubject: req.body.examMinorSubject,
         creditFulfilled: req.body.creditFulfilled
     });
 
@@ -73,11 +73,11 @@ router.post('/', async (req, res) => {
                 name: post.name,
                 doctoralSchool: post.doctoralSchool,
                 doctoralProgram: post.doctoralProgram,
-                department: post.department,
-                consultant: post.consultant,
+                courseType: post.courseType,
+                supervisor: post.supervisor,
                 doctoralTopic: post.doctoralTopic,
-                examMainSubject: post.examMainSubject,
-                examSideSubject: post.examSideSubject,
+                examMajorSubject: post.examMajorSubject,
+                examMinorSubject: post.examMinorSubject,
                 creditFulfilled: post.creditFulfilled,
                 //president
                 presidentName: req.body.presidentName,

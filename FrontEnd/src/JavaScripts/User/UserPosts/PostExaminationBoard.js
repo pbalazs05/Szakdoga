@@ -13,14 +13,14 @@ class ExaminationBoard extends Component {
         super(props)
         this.state = {
             username: UserData.GetUserUserName(),
-            name: '',
+            name: UserData.GetUserUserName(),
             doctoralSchool: '',
-            doctoralProgram: '',
-            department: '',
-            consultant: '',
+            doctoralProgram: UserData.GetUserDoctoralProgram(),
+            courseType: UserData.GetUserCourseType(),
+            supervisor: UserData.GetUserSupervisor(),
             doctoralTopic: '',
-            examMainSubject: '',
-            examSideSubject: '',
+            examMajorSubject: '',
+            examMinorSubject: '',
             creditFulfilled: '',
             //president
             presidentName: '',
@@ -120,7 +120,6 @@ class ExaminationBoard extends Component {
     }
 
     render() {
-        const{ name, doctoralSchool, doctoralProgram, department, consultant, doctoralTopic, examMainSubject, examSideSubject, creditFulfilled} = this.state;
         let content = null;
         content = <form onSubmit={this.SubmitHandler}>
             <div style={{marginLeft: "auto", marginRight: 'auto'}}>
@@ -129,47 +128,47 @@ class ExaminationBoard extends Component {
                 <br />
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Name of Candidate:</span>
-                    <input className="inputstilo" type="text"  name="JeloltNeve" value={name} label={this.username} onChange={e => this.setState({ name: e.target.value })} required />
+                    <input className="inputstilo" type="text"  name="JeloltNeve" value={this.state.username} onChange={e => this.setState({ name: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> Doctoral School:</span>
-                    <input className="inputstilo" type="text"  name="doktoriiskola" value={doctoralSchool} onChange={e => this.setState({ doctoralSchool: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="doktoriiskola" value={this.state.doctoralSchool} onChange={e => this.setState({ doctoralSchool: e.target.value })}  />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Doctoral Program:</span>
-                    <input className="inputstilo" type="text"  name="program" value={doctoralProgram} onChange={e => this.setState({ doctoralProgram: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="program" value={this.state.doctoralProgram} onChange={e => this.setState({ doctoralProgram: e.target.value })}  />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Department:</span>
-                    <input className="inputstilo" type="text"  name="department" value={department} onChange={e => this.setState({ department: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="courseType" value={this.state.courseType} onChange={e => this.setState({ courseType: e.target.value })}  />
                 </div>
 
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> Supervisor:</span>
-                    <input className="inputstilo" type="text"  name="consultant" value={consultant} onChange={e => this.setState({ consultant: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="supervisor" value={this.state.supervisor} onChange={e => this.setState({ supervisor: e.target.value })}  />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Doctoral Topic:</span>
-                    <input className="inputstilo" type="text"  name="doctoralTopic" value={doctoralTopic} onChange={e => this.setState({ doctoralTopic: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="doctoralTopic" value={this.state.doctoralTopic} onChange={e => this.setState({ doctoralTopic: e.target.value })}  />
                 </div>
 
                 <div className="ThreeDivInLine" >
-                    <span className="txt11"> The main subject of the exam:</span>
-                    <input className="inputstilo" type="text"  name="examMainSubject" value={examMainSubject} onChange={e => this.setState({ examMainSubject: e.target.value })}  />
+                    <span className="txt11"> The major subject of the exam:</span>
+                    <input className="inputstilo" type="text"  name="examMajorSubject" value={this.state.examMajorSubject} onChange={e => this.setState({ examMajorSubject: e.target.value })}  />
                 </div>
 
                 <div className="ThreeDivInLine"  >
-                    <span className="txt11"> The side subject of the exam:</span>
-                    <input className="inputstilo" type="text"  name="examSideSubject" value={examSideSubject} onChange={e => this.setState({ examSideSubject: e.target.value })}  />
+                    <span className="txt11"> The minor subject of the exam:</span>
+                    <input className="inputstilo" type="text"  name="examMinorSubject" value={this.state.examMinorSubject} onChange={e => this.setState({ examMinorSubject: e.target.value })}  />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> The student has completed the  minimum of 90 credits:</span>
-                    <input className="inputstilo" type="text"  name="creditFulfilled" value={creditFulfilled} onChange={e => this.setState({ creditFulfilled: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="creditFulfilled" value={this.state.creditFulfilled} onChange={e => this.setState({ creditFulfilled: e.target.value })}  />
                 </div>
 
                 <div style={{display: 'flex', width:"95%",  marginLeft:"auto", marginRight:"auto"}} >
