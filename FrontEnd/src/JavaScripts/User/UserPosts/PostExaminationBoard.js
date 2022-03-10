@@ -142,7 +142,7 @@ class ExaminationBoard extends Component {
                 </div>
 
                 <div className="ThreeDivInLine" >
-                    <span className="txt11"> Department:</span>
+                    <span className="txt11"> CourseType:</span>
                     <input className="inputstilo" type="text"  name="courseType" value={this.state.courseType} onChange={e => this.setState({ courseType: e.target.value })}  />
                 </div>
 
