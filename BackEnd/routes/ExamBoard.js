@@ -71,7 +71,7 @@ router.post('/', async (req, res) => {
         const datatoAdd = {
             List: [{
                 name: post.name,
-                doctoralSchool: post.doctoralSchool + " Tudományok Doktori Iskola",
+                doctoralSchool: post.doctoralSchool,
                 doctoralProgram: post.doctoralProgram,
                 department: post.department,
                 consultant: post.consultant,

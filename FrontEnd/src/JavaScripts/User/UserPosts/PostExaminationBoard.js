@@ -92,7 +92,7 @@ class ExaminationBoard extends Component {
             expertOneLocation: '',
             expertOneStreet: '',
             expertOneEmail: '',
-            //experTwo
+            //expertTwo
             expertTwoName: '',
             expertTwoPosition: '',
             expertTwoRank: '',
@@ -102,8 +102,8 @@ class ExaminationBoard extends Component {
             expertTwoLocation: '',
             expertTwoStreet: '',
             expertTwoEmail: '',
-
         }
+
     }
 
     SubmitHandler = e => {
@@ -129,7 +129,7 @@ class ExaminationBoard extends Component {
                 <br />
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Name of Candidate:</span>
-                    <input className="inputstilo" type="text"  name="JeloltNeve" value={name} onChange={e => this.setState({ name: e.target.value })} required />
+                    <input className="inputstilo" type="text"  name="JeloltNeve" value={name} label={this.username} onChange={e => this.setState({ name: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine"  >
@@ -148,7 +148,7 @@ class ExaminationBoard extends Component {
                 </div>
 
                 <div className="ThreeDivInLine"  >
-                    <span className="txt11"> Consultant:</span>
+                    <span className="txt11"> Supervisor:</span>
                     <input className="inputstilo" type="text"  name="consultant" value={consultant} onChange={e => this.setState({ consultant: e.target.value })}  />
                 </div>
 

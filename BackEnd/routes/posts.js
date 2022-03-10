@@ -8,8 +8,8 @@ const Post = require('../models/Post');
 const PostKey = require('../models/KeyAndId')
 const Str = require('@supercharge/strings');
 const SendEmail = require('./EmailSender');
-const NAE = require('../models/NameAndEmail');
-const USERS = require('../models/Users');
+const nameAndEmail = require('../models/NameAndEmail');
+const users = require('../models/Users');
 const mongoose = require('mongoose');
 const semester = require('../models/Semester');
 const db = mongoose.connection;
@@ -30,16 +30,16 @@ const db = mongoose.connection;
 router.post('/', async (req, res) => {
     const post = new Post({
         user: req.body.user,
-        targy: req.body.targy,
-        oktato: req.body.oktato,
+        subject: req.body.targy,
+        teacher: req.body.oktato,
     });
 
     try {
         const sem = await semester.findOne();
-        var semStartDate = new Date(sem.startDate);
-        const incomingPost = await Post.findOne({ oktato: post.oktato, user: post.user, targy: post.targy, date: { $gte: semStartDate } });
-        const TName = await NAE.findOne({ TeacherName: post.oktato })
-        if (incomingPost === null && TName !== null) {
+        var semesterStartDate = new Date(sem.startDate);
+        const incomingPost = await Post.findOne({ teacher: post.teacher, user: post.user, subject: post.subject, date: { $gte: semesterStartDate } });
+        const teacherName = await nameAndEmail.findOne({ TeacherName: post.teacher })
+        if (incomingPost === null && teacherName !== null) {
             const savedPost = await post.save();
             const Key = new PostKey({
                 postid: savedPost._id,
@@ -49,21 +49,21 @@ router.post('/', async (req, res) => {
             const Student = await USERS.findOne({ _id: post.user })
             Key.save();
             const url = `
-            Tisztelt ${post.oktato}!<br><br>
-            ${Student.lastname} ${Student.firstname} Kérvényezte a(z) ${post.targy} tárgy felvételének elfogadását.<br>
+            Tisztelt ${post.teacher}!<br><br>
+            ${Student.lastname} ${Student.firstname} Kérvényezte a(z) ${post.subject} tárgy felvételének elfogadását.<br>
             A nyilatkozattételt megteheti az alábbi linken.
-            <p>https://localhost:3000/subjectupdate?uid=${post.user}&pid=${post._id}&aid=${TName._id}&key=${Key.key}</p>`
+            <p>https://localhost:3000/subjectupdate?uid=${post.user}&pid=${post._id}&aid=${teacherName._id}&key=${Key.key}</p>`
             const Subject = "Tárgyfelvétel";
-            SendEmail(url, TName.TeacherEmail, Subject);
+            SendEmail(url, teacherName.TeacherEmail, Subject);
             const urlS = `
             Tisztelt ${Student.supervisor}!<br><br>
-            Ezúton tájékoztatjuk, hogy ${Student.lastname} ${Student.firstname} hallgató, az ön témavezetettje felvételre jelölte a ${post.oktato} oktató, ${post.targy} című tárgyát.<br>
+            Ezúton tájékoztatjuk, hogy ${Student.lastname} ${Student.firstname} hallgató, az ön témavezetettje felvételre jelölte a ${post.teacher} oktató, ${post.subject} című tárgyát.<br>
             Ez a levél csak tájékoztatás jellegű, az adminisztrációval kapcsolatban önnek nincs teendője.<br>
             ------------------------------------------------------------------------------------------------
             `
-            const supervisorname = await NAE.findOne({ _id: Student.supervisorID });
+            const supervisorName = await nameAndEmail.findOne({ _id: Student.supervisorID });
             const SubjectS = "Témavezető értesítés";
-            SendEmail(urlS, supervisorname.TeacherEmail, SubjectS);
+            SendEmail(urlS, supervisorName.TeacherEmail, SubjectS);
             res.json(savedPost);
         } else {
             throw 'Subject Registration Error!';
@@ -77,9 +77,9 @@ router.post('/', async (req, res) => {
 //specific post
 router.get('/:user', async (req, res) => {
     const sem = await semester.findOne();
-    var semStartDate = new Date(sem.startDate);
+    var semesterStartDate = new Date(sem.startDate);
     try {
-        const post = await Post.find({ user: req.params.user, date: { $gt: semStartDate } })
+        const post = await Post.find({ user: req.params.user, date: { $gt: semesterStartDate } })
         res.json(post);
     } catch (err) {
         res.json({ message: err });
@@ -101,14 +101,14 @@ router.get('/:subject/notadministrated', async (req, res) => {
 
         waitforgetArray.then(() => {
             try {
-                var waitforgetUsersbyIDArray = new Promise((resolve, reject) => {
+                var waitForGetUsersByIdArray = new Promise((resolve, reject) => {
                     const users = db.collection('users').find({ "_id": { "$in": ids } });
                     users.toArray(function (err, doc) {
                         resolve(doc)
                     })
                 });
 
-                waitforgetUsersbyIDArray.then((User) => {
+                waitForGetUsersByIdArray.then((User) => {
                     res.json(User);
                 })
             } catch (e) {
@@ -144,9 +144,9 @@ router.get('/:user/:postId', async (req, res) => {
 
 router.get('/:user/history/h', async (req, res) => {
     const sem = await semester.findOne();
-    var semStartDate = new Date(sem.startDate);
+    var semesterStartDate = new Date(sem.startDate);
     try {
-        const post = await Post.find({ user: req.params.user, date: { $lte: semStartDate } });
+        const post = await Post.find({ user: req.params.user, date: { $lte: semesterStartDate } });
         res.json(post);
     } catch (err) {
         res.json({ message: err });
