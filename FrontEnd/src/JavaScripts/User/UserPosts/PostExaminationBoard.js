@@ -13,7 +13,7 @@ class ExaminationBoard extends Component {
         super(props)
         this.state = {
             username: UserData.GetUserUserName(),
-            name: UserData.GetUserUserName(),
+            name: UserData.GetUserFirstName().concat(" ").concat(UserData.GetUserLastName()),
             doctoralSchool: '',
             doctoralProgram: UserData.GetUserDoctoralProgram(),
             courseType: UserData.GetUserCourseType(),
@@ -128,7 +128,7 @@ class ExaminationBoard extends Component {
                 <br />
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Name of Candidate:</span>
-                    <input className="inputstilo" type="text"  name="JeloltNeve" value={this.state.username} onChange={e => this.setState({ name: e.target.value })} required />
+                    <input className="inputstilo" type="text"  name="JeloltNeve" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine"  >
