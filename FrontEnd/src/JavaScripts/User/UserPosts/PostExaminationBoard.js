@@ -118,6 +118,19 @@ class ExaminationBoard extends Component {
             refreshPage()
         })
     }
+/*
+    SubmitHandler1 = e => {
+        e.preventDefault()
+        axios.get('https://localhost:50111/api/examboard/download', this.state)
+        .then(response => {
+            //alert("Biztos el akarod menteni?");
+            refreshPage()
+        })
+        .catch(error => {
+            alert(error)
+            refreshPage()
+        })
+    }*/
 
     render() {
         let content = null;
@@ -133,42 +146,42 @@ class ExaminationBoard extends Component {
 
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> Doctoral School:</span>
-                    <input className="inputstilo" type="text"  name="doktoriiskola" value={this.state.doctoralSchool} onChange={e => this.setState({ doctoralSchool: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="doktoriiskola" value={this.state.doctoralSchool} onChange={e => this.setState({ doctoralSchool: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Doctoral Program:</span>
-                    <input className="inputstilo" type="text"  name="program" value={this.state.doctoralProgram} onChange={e => this.setState({ doctoralProgram: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="program" value={this.state.doctoralProgram} onChange={e => this.setState({ doctoralProgram: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> CourseType:</span>
-                    <input className="inputstilo" type="text"  name="courseType" value={this.state.courseType} onChange={e => this.setState({ courseType: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="courseType" value={this.state.courseType} onChange={e => this.setState({ courseType: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> Supervisor:</span>
-                    <input className="inputstilo" type="text"  name="supervisor" value={this.state.supervisor} onChange={e => this.setState({ supervisor: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="supervisor" value={this.state.supervisor} onChange={e => this.setState({ supervisor: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Doctoral Topic:</span>
-                    <input className="inputstilo" type="text"  name="doctoralTopic" value={this.state.doctoralTopic} onChange={e => this.setState({ doctoralTopic: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="doctoralTopic" value={this.state.doctoralTopic} onChange={e => this.setState({ doctoralTopic: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> The major subject of the exam:</span>
-                    <input className="inputstilo" type="text"  name="examMajorSubject" value={this.state.examMajorSubject} onChange={e => this.setState({ examMajorSubject: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="examMajorSubject" value={this.state.examMajorSubject} onChange={e => this.setState({ examMajorSubject: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> The minor subject of the exam:</span>
-                    <input className="inputstilo" type="text"  name="examMinorSubject" value={this.state.examMinorSubject} onChange={e => this.setState({ examMinorSubject: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="examMinorSubject" value={this.state.examMinorSubject} onChange={e => this.setState({ examMinorSubject: e.target.value })} required />
                 </div>
 
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> The student has completed the  minimum of 90 credits:</span>
-                    <input className="inputstilo" type="text"  name="creditFulfilled" value={this.state.creditFulfilled} onChange={e => this.setState({ creditFulfilled: e.target.value })}  />
+                    <input className="inputstilo" type="text"  name="creditFulfilled" value={this.creditFulfilled} onChange={e => this.setState({ creditFulfilled: e.target.value })} required />
                 </div>
 
                 <div style={{display: 'flex', width:"95%",  marginLeft:"auto", marginRight:"auto"}} >

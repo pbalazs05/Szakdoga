@@ -329,6 +329,7 @@ table.GeneratedTable thead {
     border-radius: 10px;
     margin-left: 20px;
     font-size: 20px;
+    padding-left: 2px;
 }
 
 .ThreeDivInLine{

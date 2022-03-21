@@ -9,7 +9,7 @@ const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
 
 //function to read a template file and create a new with input data
-function createFile(data, username) {
+function createFile(userInputData, username) {
     //const templateFile = fs.readFileSync(path.resolve(__dirname, 'phdTemplate.docx'), 'binary');
     const templateFile = fs.readFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/phdTemplate.docx'), 'binary');
     const zip = new PizZip(templateFile);
@@ -17,10 +17,8 @@ function createFile(data, username) {
         // Attempt to read all the templated tags
         let outputDocument = new Docxtemplater(zip);
 
-        //const dataToAdd = {data};
-
         // Set the data we wish to add to the document
-        outputDocument.setData(data);
+        outputDocument.setData(userInputData);
 
         try {
             // Attempt to render the document (Add data to the template)
@@ -56,6 +54,7 @@ router.get('/', async (req, res) => {
 //submits a post
 router.post('/', async (req, res) => {
     const post = new Post({
+        username: req.body.username,
         name: req.body.name,
         doctoralSchool: req.body.doctoralSchool,
         doctoralProgram: req.body.doctoralProgram,
@@ -68,7 +67,7 @@ router.post('/', async (req, res) => {
     });
 
     try {
-        const datatoAdd = {
+        const dataToAdd = {
             List: [{
                 name: post.name,
                 doctoralSchool: post.doctoralSchool,
@@ -161,12 +160,13 @@ router.post('/', async (req, res) => {
                 expertTwoEmail: req.body.expertTwoEmail,
             },]
         };
-        createFile(datatoAdd, req.body.username);
+        createFile(dataToAdd, req.body.name);
+        //const file = path.resolve('/Users/palba/Documents/Phd_oldal/Documents/' + req.body.name + ' ' + 'Examination Board Creating.docx');
+        //res.download(file); // Set disposition and send it.
         await post.save();
         res.end();
     } catch (err) {
         res.json({ message: err });
     }
 });
-
 module.exports = router;
