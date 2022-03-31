@@ -118,20 +118,17 @@ class ExaminationBoard extends Component {
             refreshPage()
         })
     }
-/*
-    SubmitHandler1 = e => {
+
+  /*  SubmitHandler1 = e => {
         e.preventDefault()
-        axios.get('https://localhost:50111/api/examboard/download', this.state)
-        .then(response => {
-            //alert("Biztos el akarod menteni?");
-            refreshPage()
-        })
+        axios.get('https://localhost:50111/api/examboard/download', this.state).responseType('blob')
+        .then(response => this.setState({ totalReactPackages: response.data.total }))
         .catch(error => {
             alert(error)
             refreshPage()
         })
-    }*/
-
+    }
+*/
     render() {
         let content = null;
         content = <form onSubmit={this.SubmitHandler}>
@@ -155,7 +152,7 @@ class ExaminationBoard extends Component {
                 </div>
 
                 <div className="ThreeDivInLine" >
-                    <span className="txt11"> CourseType:</span>
+                    <span className="txt11"> Course Type:</span>
                     <input className="inputstilo" type="text"  name="courseType" value={this.state.courseType} onChange={e => this.setState({ courseType: e.target.value })} required />
                 </div>
 
@@ -312,7 +309,6 @@ class ExaminationBoard extends Component {
                     </tbody>
                 </table>
             </div>
-
                 <div className="container-login-form-btna">
                     <button type="submit" className="login-form-btna" onChange={this.handleSubmit}>
                         Save File
