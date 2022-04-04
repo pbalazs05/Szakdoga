@@ -119,22 +119,39 @@ class ExaminationBoard extends Component {
         })
     }
 
-  /*  SubmitHandler1 = e => {
-        e.preventDefault()
-        axios.get('https://localhost:50111/api/examboard/download', this.state).responseType('blob')
-        .then(response => this.setState({ totalReactPackages: response.data.total }))
-        .catch(error => {
-            alert(error)
-            refreshPage()
+    /**
+     * Fájl letöltést kezelő függvény
+     */
+    downloadHandler = (e) =>{
+        const fileName = this.state.name+".docx";
+    axios({
+        method: 'post',
+        url: 'https://localhost:50111/api/examboard/download',
+        responseType: 'blob',
+        headers: {},
+        data: { type:'string', value:this.state.name},
+        })
+        .then((res) => {
+            const url = window.URL.createObjectURL(new Blob([res.data]));
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', fileName);
+            document.body.appendChild(link);
+            link.click();
+        })
+        .catch((error) => {
+            alert("Még nem készítetted el a fájlt.");
+            refreshPage();
         })
     }
-*/
+
     render() {
         let content = null;
         content = <form onSubmit={this.SubmitHandler}>
             <div style={{marginLeft: "auto", marginRight: 'auto'}}>
                 <br />
-                <span className="info-titleuser">Suggestion for the composition of the (Phd) complex exam examination board!</span>
+                <span className="info-titleuser">Recommendation for the composition of the (PhD) complex exam committee!</span>
                 <br />
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Name of Candidate:</span>
@@ -190,10 +207,10 @@ class ExaminationBoard extends Component {
                             <th></th>
                             <th>Name</th>
                             <th>Position</th>
-                            <th>Rank</th>
+                            <th>Selecting degree</th>
                             <th>Institution</th>
                             <th>Department</th>
-                            <th>Post code</th>
+                            <th>Postcode</th>
                             <th>Location</th>
                             <th>Street</th>
                             <th>E-mail</th>
@@ -201,9 +218,9 @@ class ExaminationBoard extends Component {
                     </thead>
                     <tbody>
                         <tr>
-                            <td rowSpan="8" style={{writingMode: "vertical-rl", textOrientation: "upright", padding:"5px", textAlign: "center"}}  className="BoldFontStyle" >Examination Board</td>
-                            <td className="BoldFontStyle" >President</td>
-                            <td className="BoldFontStyle" >B</td>
+                            <td rowSpan="8" style={{writingMode: "vertical-rl", textOrientation: "upright", padding:"5px", textAlign: "center"}}  className="BoldFontStyle" >Committee</td>
+                            <td className="BoldFontStyle" >Chair</td>
+                            <td className="BoldFontStyle" >Internal</td>
                             <td><input className="tdInput" type="text" name="presidentName" value={this.presidentName} onChange={e => this.setState({ presidentName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="presidentPositin" value={this.presidentPositin} onChange={e => this.setState({ presidentPositin: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="presidentRank" value={this.presidentRank} onChange={e => this.setState({ presidentRank: e.target.value })}  ></input></td>
@@ -216,8 +233,8 @@ class ExaminationBoard extends Component {
 
                         </tr>
                         <tr>
-                            <td className="BoldFontStyle" >Reserve President</td>
-                            <td className="BoldFontStyle" >B</td>
+                            <td className="BoldFontStyle" >Reserve Chair</td>
+                            <td className="BoldFontStyle" >Internal</td>
                             <td><input className="tdInput" type="text" name="reservePresidentName" value={this.reservePresidentName} onChange={e => this.setState({ reservePresidentName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="reservePresidentPosition" value={this.reservePresidentPosition} onChange={e => this.setState({ reservePresidentPosition: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="reservePresidentRank" value={this.reservePresidentRank} onChange={e => this.setState({ reservePresidentRank: e.target.value })}  ></input></td>
@@ -230,7 +247,7 @@ class ExaminationBoard extends Component {
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Member</td>
-                            <td className="BoldFontStyle" >K</td>
+                            <td className="BoldFontStyle" >External</td>
                             <td><input className="tdInput" type="text" name="memberOneName" value={this.memberOneName} onChange={e => this.setState({ memberOneName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="memberOnePosition" value={this.memberOnePosition} onChange={e => this.setState({ memberOnePosition: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="memberOneRank" value={this.memberOneRank} onChange={e => this.setState({ memberOneRank: e.target.value })}  ></input></td>
@@ -243,7 +260,7 @@ class ExaminationBoard extends Component {
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Member</td>
-                            <td className="BoldFontStyle" >B</td>
+                            <td className="BoldFontStyle" >Internal</td>
                             <td><input className="tdInput" type="text" name="memberTwoName" value={this.memberTwoName} onChange={e => this.setState({ memberTwoName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="memberTwoPosition" value={this.memberTwoPosition} onChange={e => this.setState({ memberTwoPosition: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="memberTwoRank" value={this.memberTwoRank} onChange={e => this.setState({ memberTwoRank: e.target.value })}  ></input></td>
@@ -255,8 +272,8 @@ class ExaminationBoard extends Component {
                             <td><input className="tdInput" type="text" name="memberTwoEmail" value={this.memberTwoEmail} onChange={e => this.setState({ memberTwoEmail: e.target.value })}  ></input></td>
                         </tr>
                         <tr>
-                            <td className="BoldFontStyle" >Substitute</td>
-                            <td className="BoldFontStyle" >K</td>
+                            <td className="BoldFontStyle" >Reserve Member</td>
+                            <td className="BoldFontStyle" >External</td>
                             <td><input className="tdInput" type="text" name="substituteOneName" value={this.substituteOneName} onChange={e => this.setState({ substituteOneName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="substituteOnePosition" value={this.substituteOnePosition} onChange={e => this.setState({ substituteOnePosition: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="substituteOneRank" value={this.substituteOneRank} onChange={e => this.setState({ substituteOneRank: e.target.value })}  ></input></td>
@@ -268,8 +285,8 @@ class ExaminationBoard extends Component {
                             <td><input className="tdInput" type="text" name="substituteOneEmail" value={this.substituteOneEmail} onChange={e => this.setState({ substituteOneEmail: e.target.value })}  ></input></td>
                         </tr>
                         <tr>
-                            <td className="BoldFontStyle" >Substitute</td>
-                            <td className="BoldFontStyle" >B</td>
+                            <td className="BoldFontStyle" >Reserve Member</td>
+                            <td className="BoldFontStyle" >Internal</td>
                             <td><input className="tdInput" type="text" name="substituteTwoName" value={this.substituteTwoName} onChange={e => this.setState({ substituteTwoName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="substituteTwoPosition" value={this.substituteTwoPosition} onChange={e => this.setState({ substituteTwoPosition: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="substituteTwoRank" value={this.substituteTwoRank} onChange={e => this.setState({ substituteTwoRank: e.target.value })}  ></input></td>
@@ -282,7 +299,7 @@ class ExaminationBoard extends Component {
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Expert</td>
-                            <td className="BoldFontStyle" >K</td>
+                            <td className="BoldFontStyle" >External</td>
                             <td><input className="tdInput" type="text" name="expertOneName" value={this.expertOneName} onChange={e => this.setState({ expertOneName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="expertOnePosition" value={this.expertOnePosition} onChange={e => this.setState({ expertOnePosition: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="expertOneRank" value={this.expertOneRank} onChange={e => this.setState({ expertOneRank: e.target.value })}  ></input></td>
@@ -295,7 +312,7 @@ class ExaminationBoard extends Component {
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Expert</td>
-                            <td className="BoldFontStyle" >B</td>
+                            <td className="BoldFontStyle" >Internal</td>
                             <td><input className="tdInput" type="text" name="expertTwoName" value={this.expertTwoName} onChange={e => this.setState({ expertTwoName: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="expertTwoPosition" value={this.expertTwoPosition} onChange={e => this.setState({ expertTwoPosition: e.target.value })}  ></input></td>
                             <td><input className="tdInput" type="text" name="expertTwoRank" value={this.expertTwoRank} onChange={e => this.setState({ expertTwoRank: e.target.value })}  ></input></td>
@@ -309,10 +326,9 @@ class ExaminationBoard extends Component {
                     </tbody>
                 </table>
             </div>
-                <div className="container-login-form-btna">
-                    <button type="submit" className="login-form-btna" onChange={this.handleSubmit}>
-                        Save File
-                    </button>
+                <div className="documentButtons">
+                    <button type="submit" className="documentButtonss" onChange={this.handleSubmit}>Save File</button>
+                    <button type="submit" className="documentButtonss" style={{display: 'inline-block'}} onClick={this.downloadHandler}>Download File</button>
                 </div>
             </div>
         </form>

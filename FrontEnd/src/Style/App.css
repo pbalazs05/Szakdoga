@@ -352,3 +352,31 @@ table.GeneratedTable thead {
     font-size: 20px;
     padding: 5px;
 }
+
+.documentButtons{
+    padding-inline-start: 20px;
+    padding-top: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.documentButtonss{
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 30px;
+    background-color: #bebebe;
+    border-radius: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    font-style: bold;
+    line-height: 1.2;
+    display: inline-block;
+    margin-inline: 25px;
+}

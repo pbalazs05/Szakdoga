@@ -7,7 +7,13 @@ var fs = require('fs');
 const path = require('path');
 const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
+var cors = require('cors');
+router.use(cors());
 
+/**
+ * Fájl létrehozást és letöltést kezelő függvény
+ * Beolvassa a template fájlt és az alapján csinál egy úja és bele írja az input adatokat
+ */
 //function to read a template file and create a new with input data
 function createFile(userInputData, username) {
     //const templateFile = fs.readFileSync(path.resolve(__dirname, 'phdTemplate.docx'), 'binary');
@@ -51,7 +57,34 @@ router.get('/', async (req, res) => {
     }
 });
 
-//submits a post
+/**
+ * A fájl letöltést kezelő post metódus
+ */
+router.post('/download', cors({
+    exposedHeaders: ['Content-Disposition'],
+  }),async (req, res) => {
+    try{
+        const fileName = req.body.value+' Examination Board Creating.docx';
+        const fileUrl = 'C:\\Users\\palba\\Documents\\Phd_oldal\\Documents\\'+fileName;
+        const stream = fs.createReadStream(fileUrl);
+        res.download(fileUrl,fileName,stream);
+        res.header({
+            'Content-Disposition': `attachment; filename='${fileName}'`,
+            'Content-Type': 'application/docx',
+        });
+        stream.on('error', function (err) {res.end(err);});
+
+        stream.pipe(res);
+    } catch (e) {
+        console.error(e)
+        res.status(500).end();
+    }
+
+});
+
+/**
+ * Ez a post metódus kapja meg az adatokat a felhasználótól és adja át a createFile függvénynek
+ */
 router.post('/', async (req, res) => {
     const post = new Post({
         username: req.body.username,
@@ -160,9 +193,8 @@ router.post('/', async (req, res) => {
                 expertTwoEmail: req.body.expertTwoEmail,
             },]
         };
+
         createFile(dataToAdd, req.body.name);
-        //const file = path.resolve('/Users/palba/Documents/Phd_oldal/Documents/' + req.body.name + ' ' + 'Examination Board Creating.docx');
-        //res.download(file); // Set disposition and send it.
         await post.save();
         res.end();
     } catch (err) {

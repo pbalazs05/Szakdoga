@@ -20,6 +20,7 @@
     "express-session": "^1.17.1",
     "generate-password": "^1.5.1",
     "helmet": "^4.1.0",
+    "js-file-download": "^0.4.12",
     "mailparser-mit": "^1.0.0",
     "mimemessage": "^1.0.5",
     "mongoose": "^5.9.20",

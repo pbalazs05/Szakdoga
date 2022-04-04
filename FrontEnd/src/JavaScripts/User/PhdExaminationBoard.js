@@ -8,7 +8,6 @@ import ExaminationBoard from './UserPosts/PostExaminationBoard';
 function Examboard() {
     useEffect(() => {
         fetchItems();
-      //  fetchItemsDownload();
     }, []);
 
     const [items, setItems] = useState([]);
@@ -20,14 +19,6 @@ function Examboard() {
         const items = await data.json();
         setItems(items);
     };
-/*
-    const fetchItemsDownload = async () => {
-        const data = await fetch(
-            'https://localhost:50111/api/examboard/download'
-        );
-        const items = await data.json();
-        setItems(items);
-    };*/
 
     return (
         <div>
