@@ -141,7 +141,7 @@ class ExaminationBoard extends Component {
             link.click();
         })
         .catch((error) => {
-            alert("Még nem készítetted el a fájlt.");
+            alert("You have not created this document yet.");
             refreshPage();
         })
     }
@@ -157,42 +157,34 @@ class ExaminationBoard extends Component {
                     <span className="txt11"> Name of Candidate:</span>
                     <input className="inputstilo" type="text"  name="JeloltNeve" value={this.state.name} onChange={e => this.setState({ name: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> Doctoral School:</span>
                     <input className="inputstilo" type="text"  name="doktoriiskola" value={this.state.doctoralSchool} onChange={e => this.setState({ doctoralSchool: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Doctoral Program:</span>
                     <input className="inputstilo" type="text"  name="program" value={this.state.doctoralProgram} onChange={e => this.setState({ doctoralProgram: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Course Type:</span>
                     <input className="inputstilo" type="text"  name="courseType" value={this.state.courseType} onChange={e => this.setState({ courseType: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> Supervisor:</span>
                     <input className="inputstilo" type="text"  name="supervisor" value={this.state.supervisor} onChange={e => this.setState({ supervisor: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Doctoral Topic:</span>
                     <input className="inputstilo" type="text"  name="doctoralTopic" value={this.state.doctoralTopic} onChange={e => this.setState({ doctoralTopic: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> The major subject of the exam:</span>
                     <input className="inputstilo" type="text"  name="examMajorSubject" value={this.state.examMajorSubject} onChange={e => this.setState({ examMajorSubject: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> The minor subject of the exam:</span>
                     <input className="inputstilo" type="text"  name="examMinorSubject" value={this.state.examMinorSubject} onChange={e => this.setState({ examMinorSubject: e.target.value })} required />
                 </div>
-
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> The student has completed the  minimum of 90 credits:</span>
                     <input className="inputstilo" type="text"  name="creditFulfilled" value={this.creditFulfilled} onChange={e => this.setState({ creditFulfilled: e.target.value })} required />
@@ -207,7 +199,7 @@ class ExaminationBoard extends Component {
                             <th></th>
                             <th>Name</th>
                             <th>Position</th>
-                            <th>Selecting degree</th>
+                            <th>Scientific degree</th>
                             <th>Institution</th>
                             <th>Department</th>
                             <th>Postcode</th>
@@ -221,81 +213,80 @@ class ExaminationBoard extends Component {
                             <td rowSpan="8" style={{writingMode: "vertical-rl", textOrientation: "upright", padding:"5px", textAlign: "center"}}  className="BoldFontStyle" >Committee</td>
                             <td className="BoldFontStyle" >Chair</td>
                             <td className="BoldFontStyle" >Internal</td>
-                            <td><input className="tdInput" type="text" name="presidentName" value={this.presidentName} onChange={e => this.setState({ presidentName: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentPositin" value={this.presidentPositin} onChange={e => this.setState({ presidentPositin: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentRank" value={this.presidentRank} onChange={e => this.setState({ presidentRank: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentInstitution" value={this.presidentInstitution} onChange={e => this.setState({ presidentInstitution: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentDepartment" value={this.presidentDepartment} onChange={e => this.setState({ presidentDepartment: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentPostCode" value={this.presidentPostCode} onChange={e => this.setState({ presidentPostCode: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentLocation" value={this.presidentLocation} onChange={e => this.setState({ presidentLocation: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentStreet" value={this.presidentStreet} onChange={e => this.setState({ presidentStreet: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="presidentEmail" value={this.presidentEmail} onChange={e => this.setState({ presidentEmail: e.target.value })}  ></input></td>
-
+                            <td><input className="tdInput" type="text" name="presidentName" value={this.presidentName} onChange={e => this.setState({ presidentName: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentPositin" value={this.presidentPositin} onChange={e => this.setState({ presidentPositin: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentRank" value={this.presidentRank} onChange={e => this.setState({ presidentRank: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentInstitution" value={this.presidentInstitution} onChange={e => this.setState({ presidentInstitution: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentDepartment" value={this.presidentDepartment} onChange={e => this.setState({ presidentDepartment: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentPostCode" value={this.presidentPostCode} onChange={e => this.setState({ presidentPostCode: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentLocation" value={this.presidentLocation} onChange={e => this.setState({ presidentLocation: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentStreet" value={this.presidentStreet} onChange={e => this.setState({ presidentStreet: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="presidentEmail" value={this.presidentEmail} onChange={e => this.setState({ presidentEmail: e.target.value })} required ></input></td>
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Reserve Chair</td>
                             <td className="BoldFontStyle" >Internal</td>
-                            <td><input className="tdInput" type="text" name="reservePresidentName" value={this.reservePresidentName} onChange={e => this.setState({ reservePresidentName: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentPosition" value={this.reservePresidentPosition} onChange={e => this.setState({ reservePresidentPosition: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentRank" value={this.reservePresidentRank} onChange={e => this.setState({ reservePresidentRank: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentInstitution" value={this.reservePresidentInstitution} onChange={e => this.setState({ reservePresidentInstitution: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentDepartment" value={this.reservePresidentDepartment} onChange={e => this.setState({ reservePresidentDepartment: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentPostCode" value={this.reservePresidentPostCode} onChange={e => this.setState({ reservePresidentPostCode: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentLocation" value={this.reservePresidentLocation} onChange={e => this.setState({ reservePresidentLocation: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentStreet" value={this.reservePresidentStreet} onChange={e => this.setState({ reservePresidentStreet: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="reservePresidentEmail" value={this.reservePresidentEmail} onChange={e => this.setState({ reservePresidentEmail: e.target.value })}  ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentName" value={this.reservePresidentName} onChange={e => this.setState({ reservePresidentName: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentPosition" value={this.reservePresidentPosition} onChange={e => this.setState({ reservePresidentPosition: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentRank" value={this.reservePresidentRank} onChange={e => this.setState({ reservePresidentRank: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentInstitution" value={this.reservePresidentInstitution} onChange={e => this.setState({ reservePresidentInstitution: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentDepartment" value={this.reservePresidentDepartment} onChange={e => this.setState({ reservePresidentDepartment: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentPostCode" value={this.reservePresidentPostCode} onChange={e => this.setState({ reservePresidentPostCode: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentLocation" value={this.reservePresidentLocation} onChange={e => this.setState({ reservePresidentLocation: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentStreet" value={this.reservePresidentStreet} onChange={e => this.setState({ reservePresidentStreet: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="reservePresidentEmail" value={this.reservePresidentEmail} onChange={e => this.setState({ reservePresidentEmail: e.target.value })} required ></input></td>
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Member</td>
                             <td className="BoldFontStyle" >External</td>
-                            <td><input className="tdInput" type="text" name="memberOneName" value={this.memberOneName} onChange={e => this.setState({ memberOneName: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOnePosition" value={this.memberOnePosition} onChange={e => this.setState({ memberOnePosition: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOneRank" value={this.memberOneRank} onChange={e => this.setState({ memberOneRank: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOneInstitution" value={this.memberOneInstitution} onChange={e => this.setState({ memberOneInstitution: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOneDepartment" value={this.memberOneDepartment} onChange={e => this.setState({ memberOneDepartment: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOnePostCode" value={this.memberOnePostCode} onChange={e => this.setState({ memberOnePostCode: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOneLocation" value={this.memberOneLocation} onChange={e => this.setState({ memberOneLocation: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOneStreet" value={this.memberOneStreet} onChange={e => this.setState({ memberOneStreet: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberOneEmail" value={this.memberOneEmail} onChange={e => this.setState({ memberOneEmail: e.target.value })}  ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOneName" value={this.memberOneName} onChange={e => this.setState({ memberOneName: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOnePosition" value={this.memberOnePosition} onChange={e => this.setState({ memberOnePosition: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOneRank" value={this.memberOneRank} onChange={e => this.setState({ memberOneRank: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOneInstitution" value={this.memberOneInstitution} onChange={e => this.setState({ memberOneInstitution: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOneDepartment" value={this.memberOneDepartment} onChange={e => this.setState({ memberOneDepartment: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOnePostCode" value={this.memberOnePostCode} onChange={e => this.setState({ memberOnePostCode: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOneLocation" value={this.memberOneLocation} onChange={e => this.setState({ memberOneLocation: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOneStreet" value={this.memberOneStreet} onChange={e => this.setState({ memberOneStreet: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberOneEmail" value={this.memberOneEmail} onChange={e => this.setState({ memberOneEmail: e.target.value })} required ></input></td>
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Member</td>
                             <td className="BoldFontStyle" >Internal</td>
-                            <td><input className="tdInput" type="text" name="memberTwoName" value={this.memberTwoName} onChange={e => this.setState({ memberTwoName: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoPosition" value={this.memberTwoPosition} onChange={e => this.setState({ memberTwoPosition: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoRank" value={this.memberTwoRank} onChange={e => this.setState({ memberTwoRank: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoIntitution" value={this.memberTwoIntitution} onChange={e => this.setState({ memberTwoIntitution: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoDepartment" value={this.memberTwoDepartment} onChange={e => this.setState({ memberTwoDepartment: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoPostCode" value={this.memberTwoPostCode} onChange={e => this.setState({ memberTwoPostCode: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoLocation" value={this.memberTwoLocation} onChange={e => this.setState({ memberTwoLocation: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoStreet" value={this.memberTwoStreet} onChange={e => this.setState({ memberTwoStreet: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="memberTwoEmail" value={this.memberTwoEmail} onChange={e => this.setState({ memberTwoEmail: e.target.value })}  ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoName" value={this.memberTwoName} onChange={e => this.setState({ memberTwoName: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoPosition" value={this.memberTwoPosition} onChange={e => this.setState({ memberTwoPosition: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoRank" value={this.memberTwoRank} onChange={e => this.setState({ memberTwoRank: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoIntitution" value={this.memberTwoIntitution} onChange={e => this.setState({ memberTwoIntitution: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoDepartment" value={this.memberTwoDepartment} onChange={e => this.setState({ memberTwoDepartment: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoPostCode" value={this.memberTwoPostCode} onChange={e => this.setState({ memberTwoPostCode: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoLocation" value={this.memberTwoLocation} onChange={e => this.setState({ memberTwoLocation: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoStreet" value={this.memberTwoStreet} onChange={e => this.setState({ memberTwoStreet: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="memberTwoEmail" value={this.memberTwoEmail} onChange={e => this.setState({ memberTwoEmail: e.target.value })} required ></input></td>
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Reserve Member</td>
                             <td className="BoldFontStyle" >External</td>
-                            <td><input className="tdInput" type="text" name="substituteOneName" value={this.substituteOneName} onChange={e => this.setState({ substituteOneName: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOnePosition" value={this.substituteOnePosition} onChange={e => this.setState({ substituteOnePosition: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOneRank" value={this.substituteOneRank} onChange={e => this.setState({ substituteOneRank: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOneInstitution" value={this.substituteOneInstitution} onChange={e => this.setState({ substituteOneInstitution: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOneDepartment" value={this.substituteOneDepartment} onChange={e => this.setState({ substituteOneDepartment: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOnePostCode" value={this.substituteOnePostCode} onChange={e => this.setState({ substituteOnePostCode: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOneLocation" value={this.substituteOneLocation} onChange={e => this.setState({ substituteOneLocation: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOneStreet" value={this.substituteOneStreet} onChange={e => this.setState({ substituteOneStreet: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteOneEmail" value={this.substituteOneEmail} onChange={e => this.setState({ substituteOneEmail: e.target.value })}  ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOneName" value={this.substituteOneName} onChange={e => this.setState({ substituteOneName: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOnePosition" value={this.substituteOnePosition} onChange={e => this.setState({ substituteOnePosition: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOneRank" value={this.substituteOneRank} onChange={e => this.setState({ substituteOneRank: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOneInstitution" value={this.substituteOneInstitution} onChange={e => this.setState({ substituteOneInstitution: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOneDepartment" value={this.substituteOneDepartment} onChange={e => this.setState({ substituteOneDepartment: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOnePostCode" value={this.substituteOnePostCode} onChange={e => this.setState({ substituteOnePostCode: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOneLocation" value={this.substituteOneLocation} onChange={e => this.setState({ substituteOneLocation: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOneStreet" value={this.substituteOneStreet} onChange={e => this.setState({ substituteOneStreet: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteOneEmail" value={this.substituteOneEmail} onChange={e => this.setState({ substituteOneEmail: e.target.value })} required ></input></td>
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Reserve Member</td>
                             <td className="BoldFontStyle" >Internal</td>
-                            <td><input className="tdInput" type="text" name="substituteTwoName" value={this.substituteTwoName} onChange={e => this.setState({ substituteTwoName: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoPosition" value={this.substituteTwoPosition} onChange={e => this.setState({ substituteTwoPosition: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoRank" value={this.substituteTwoRank} onChange={e => this.setState({ substituteTwoRank: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoIntitution" value={this.substituteTwoIntitution} onChange={e => this.setState({ substituteTwoIntitution: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoDepartment" value={this.substituteTwoDepartment} onChange={e => this.setState({ substituteTwoDepartment: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoPostCode" value={this.substituteTwoPostCode} onChange={e => this.setState({ substituteTwoPostCode: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoLocation" value={this.substituteTwoLocation} onChange={e => this.setState({ substituteTwoLocation: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoStreet" value={this.substituteTwoStreet} onChange={e => this.setState({ substituteTwoStreet: e.target.value })}  ></input></td>
-                            <td><input className="tdInput" type="text" name="substituteTwoEmail" value={this.substituteTwoEmail} onChange={e => this.setState({ substituteTwoEmail: e.target.value })}  ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoName" value={this.substituteTwoName} onChange={e => this.setState({ substituteTwoName: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoPosition" value={this.substituteTwoPosition} onChange={e => this.setState({ substituteTwoPosition: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoRank" value={this.substituteTwoRank} onChange={e => this.setState({ substituteTwoRank: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoIntitution" value={this.substituteTwoIntitution} onChange={e => this.setState({ substituteTwoIntitution: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoDepartment" value={this.substituteTwoDepartment} onChange={e => this.setState({ substituteTwoDepartment: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoPostCode" value={this.substituteTwoPostCode} onChange={e => this.setState({ substituteTwoPostCode: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoLocation" value={this.substituteTwoLocation} onChange={e => this.setState({ substituteTwoLocation: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoStreet" value={this.substituteTwoStreet} onChange={e => this.setState({ substituteTwoStreet: e.target.value })} required ></input></td>
+                            <td><input className="tdInput" type="text" name="substituteTwoEmail" value={this.substituteTwoEmail} onChange={e => this.setState({ substituteTwoEmail: e.target.value })} required ></input></td>
                         </tr>
                         <tr>
                             <td className="BoldFontStyle" >Expert</td>

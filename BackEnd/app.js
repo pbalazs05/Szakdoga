@@ -2,17 +2,15 @@ if (process.env.NODE_ENV !== 'production') { //ha a környezet nem lenne tölten
     require('dotenv').config()
 }
 
-//https-hez
-const fs = require('fs')
-const key = fs.readFileSync('./cert/localhost/localhost.decrypted.key');
-const cert = fs.readFileSync('./cert/localhost/localhost.crt'); //
-
 const express = require('express');
 const helmet = require("helmet");
 const app = express();
 const session = require("express-session");
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const fs = require('fs')
+const https = require('https');
+
 
 //Routes
 const SubjectRoute = require('./routes/subjects');
@@ -97,7 +95,12 @@ db.once('open', () => console.log('connected'))
 //Starting listening
 //app.listen(50111);
 
-//https-hez
+/**
+ * Https- megvalósításához
+ */
+ const key = fs.readFileSync('./cert/localhost/localhost.decrypted.key');
+ const cert = fs.readFileSync('./cert/localhost/localhost.crt');
+
 app.get('/', (reg, res, next) => {
     res.status(200);
     res.setHeader('Acces-Control-Allow-Origin', '*');
@@ -105,10 +108,8 @@ app.get('/', (reg, res, next) => {
     res.setHeader('Acces-Contorl-Allow-Methods', 'Content-Type', 'Authorization');
     res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
     next();
-
 });
 
-const https = require('https');
 const server = https.createServer({ key, cert }, app);
 const port = 50111;
 server.listen(port, () => {
