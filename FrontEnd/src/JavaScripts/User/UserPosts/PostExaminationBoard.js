@@ -123,7 +123,7 @@ class ExaminationBoard extends Component {
      * Fájl letöltést kezelő függvény
      */
     downloadHandler = (e) =>{
-        const fileName = this.state.name+".docx";
+        const fileName = this.state.name+" PhD complex exam committee.docx";
     axios({
         method: 'post',
         url: 'https://localhost:50111/api/examboard/download',
@@ -151,7 +151,7 @@ class ExaminationBoard extends Component {
         content = <form onSubmit={this.SubmitHandler}>
             <div style={{marginLeft: "auto", marginRight: 'auto'}}>
                 <br />
-                <span className="info-titleuser">Recommendation for the composition of the (PhD) complex exam committee!</span>
+                <span className="info-titleuser">Suggestion for the composition of the (PhD) complex exam committee!</span>
                 <br />
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Name of Candidate:</span>

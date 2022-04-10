@@ -23,6 +23,7 @@ import { SecuredRouteAsUser } from "./User/Userprotected.route";
 import SubjectUpdate from './Admin/Subjectupdate';
 import MainPage from './MainPage';
 import PhdExaminationBoard from './User/PhdExaminationBoard';
+import DoctoralDissertationDefenseCommitte from './User/DoctoralDissertationDefense';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
                     <SecuredRouteAsUser path="/subject-registration" component={Felvetel} />
                     <SecuredRouteAsUser path="/graduation" component={Abszolvalt} />
                     <SecuredRouteAsUser path="/examination-board" component={PhdExaminationBoard} />
+                    <SecuredRouteAsUser path="/dissertation-defense-committee" component={DoctoralDissertationDefenseCommitte}/>
                 </Switch>
             </div>
         </Router>

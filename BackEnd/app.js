@@ -44,6 +44,7 @@ const GetSubjectUpdateRoute = require('./routes/subjectupdate');
 const GetAllUserwithPendingSubject = require('./routes/Pending');
 const GetEditSemesterRoute = require('./routes/EditSemester');
 const GetExamBoard = require('./routes/ExamBoard');
+const GetDissertationDefenseCommitte = require('./routes/DoctoralDissertationDefense');
 
 var cors = require('cors');
 app.use(helmet());
@@ -87,6 +88,7 @@ app.use('/api/subjectupdate', GetSubjectUpdateRoute);
 app.use('/api/getpendingusers', GetAllUserwithPendingSubject);
 app.use('/api/editsemester', GetEditSemesterRoute);
 app.use('/api/examboard', GetExamBoard);
+app.use('/api/DissertationDefense', GetDissertationDefenseCommitte);
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection
