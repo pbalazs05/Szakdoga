@@ -5,7 +5,7 @@ import PostDoctoralDissertation from './UserPosts/PostDoctoralDissertationDefens
 
 
 
-function Examboard() {
+function DoctoralDissertationDefense() {
     useEffect(() => {
         fetchItems();
     }, []);
@@ -29,4 +29,4 @@ function Examboard() {
     );
 }
 
-export default Examboard;
+export default DoctoralDissertationDefense;

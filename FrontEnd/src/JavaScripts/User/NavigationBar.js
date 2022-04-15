@@ -35,11 +35,11 @@ function Nav() {
                         <a href="/graduation">Degree Conferment Procedure</a>
                     </li>
                     <li>
-                        <div className="dropdownnav">
+                       <div className="dropdownnav">
                             <button className="dropbtnnav">Documents</button>
                             <div className="dropdown-contentnav">
                                 <a href="/examination-board">Suggestion for the PhD exam committee composition</a>
-                                <a href="/dissertation-defense-committee">Suggestion for dissertation defense committee composition</a>
+                               {/* <a href="/dissertation-defense-committee">Suggestion for dissertation defense committee composition</a>*/}
                             </div>
                         </div>
                     </li>

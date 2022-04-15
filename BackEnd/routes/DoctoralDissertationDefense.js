@@ -78,7 +78,6 @@ router.post('/download', cors({
         console.error(e)
         res.status(500).end();
     }
-
 });
 
 /**
