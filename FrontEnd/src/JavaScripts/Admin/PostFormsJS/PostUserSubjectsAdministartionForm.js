@@ -51,10 +51,10 @@ class PostUserAdministration extends Component {
     handleClick = event => {
         const datas = event.target.dataset.mssg.split('|');
 
-        fetch('https://localhost:50111/api/posts/' + datas[0] + '/history/h')
+        fetch('https://phd.inf.unideb.hu/api/posts/' + datas[0] + '/history/h')
             .then((response) => response.json())
             .then((responseData) => {
-                fetch('https://localhost:50111/api/posts/' + datas[0])
+                fetch('https://phd.inf.unideb.hu/api/posts/' + datas[0])
                     .then((response) => response.json())
                     .then((resforCurrentSubjects) => {
                         this.setState({
@@ -78,7 +78,7 @@ class PostUserAdministration extends Component {
     }
 
     handleClickForNotAdministrated = event => {
-        fetch('https://localhost:50111/api/posts/subject/notadministrated')
+        fetch('https://phd.inf.unideb.hu/api/posts/subject/notadministrated')
             .then((response) => response.json())
             .then((responseData) => {
                 this.setState({
@@ -91,7 +91,7 @@ class PostUserAdministration extends Component {
 
     handleClickForAdministration = event => {
         const datas = event.target.dataset.mssg.split('|');
-        fetch('https://localhost:50111/api/posts/' + datas[0] + '/getusernotadministratedsubjects')
+        fetch('https://phd.inf.unideb.hu/api/posts/' + datas[0] + '/getusernotadministratedsubjects')
             .then((response) => response.json())
             .then((responseData) => {
                 this.setState({
@@ -125,10 +125,10 @@ class PostUserAdministration extends Component {
 
     SubmitHandlerForAdministrate = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/PostAdministrate', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/PostAdministrate', this.state)
             .then(response => {
                 alert(response.data);
-                fetch('https://localhost:50111/api/posts/' + this.state.UserID + '/getusernotadministratedsubjects')
+                fetch('https://phd.inf.unideb.hu/api/posts/' + this.state.UserID + '/getusernotadministratedsubjects')
                     .then((response) => response.json())
                     .then((responseData) => {
                         this.setState({
@@ -143,7 +143,7 @@ class PostUserAdministration extends Component {
     }
 
     handleClickForPendingSubjects = event => {
-        fetch('https://localhost:50111/api/getpendingusers')
+        fetch('https://phd.inf.unideb.hu/api/getpendingusers')
             .then((response) => response.json())
             .then((responseData) => {
                 this.setState({
@@ -156,7 +156,7 @@ class PostUserAdministration extends Component {
 
     handleClickForGetUserPendingSubject = event => {
         const datas = event.target.dataset.mssg.split('|');
-        fetch('https://localhost:50111/api/getpendingusers/' + datas[0] + '/getuserpendingsubjects')
+        fetch('https://phd.inf.unideb.hu/api/getpendingusers/' + datas[0] + '/getuserpendingsubjects')
             .then((response) => response.json())
             .then((responseData) => {
                 this.setState({
@@ -212,10 +212,10 @@ class PostUserAdministration extends Component {
 
     SubmitHandlerForDecline = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/getpendingusers/pending/decline', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/getpendingusers/pending/decline', this.state)
             .then(response => {
                 alert(response.data);
-                fetch('https://localhost:50111/api/getpendingusers/' + this.state.UserID + '/getuserpendingsubjects')
+                fetch('https://phd.inf.unideb.hu/api/getpendingusers/' + this.state.UserID + '/getuserpendingsubjects')
                     .then((response) => response.json())
                     .then((responseData) => {
                         this.setState({
@@ -231,10 +231,10 @@ class PostUserAdministration extends Component {
 
     SubmitHandlerForResend = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/getpendingusers/pending/resend', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/getpendingusers/pending/resend', this.state)
             .then(response => {
                 alert(response.data);
-                fetch('https://localhost:50111/api/getpendingusers/' + this.state.UserID + '/getuserpendingsubjects')
+                fetch('https://phd.inf.unideb.hu/api/getpendingusers/' + this.state.UserID + '/getuserpendingsubjects')
                     .then((response) => response.json())
                     .then((responseData) => {
                         this.setState({
@@ -250,10 +250,10 @@ class PostUserAdministration extends Component {
 
     SubmitHandlerForAccept = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/getpendingusers/pending/accept', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/getpendingusers/pending/accept', this.state)
             .then(response => {
                 alert(response.data);
-                fetch('https://localhost:50111/api/getpendingusers/' + this.state.UserID + '/getuserpendingsubjects')
+                fetch('https://phd.inf.unideb.hu/api/getpendingusers/' + this.state.UserID + '/getuserpendingsubjects')
                     .then((response) => response.json())
                     .then((responseData) => {
                         this.setState({

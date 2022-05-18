@@ -23,7 +23,7 @@ class PostRegAdminForm extends Component {
     }
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/RegAdmin', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/RegAdmin', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()

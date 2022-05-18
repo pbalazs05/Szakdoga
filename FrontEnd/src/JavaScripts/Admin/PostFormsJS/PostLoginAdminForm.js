@@ -27,7 +27,7 @@ class PostLoginAdminForm extends Component {
     }
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/adminlogin', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/adminlogin', this.state)
             .then(response => {
                 AdminData.SetAdminFirstname(response.data.firstname);
                 AdminData.SetAdminLastname(response.data.lastname);

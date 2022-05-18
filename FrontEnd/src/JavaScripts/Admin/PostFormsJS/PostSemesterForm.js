@@ -66,7 +66,7 @@ class PostRegAdminForm extends Component {
         } else if (this.state.startDate >= this.state.endDate) {
             this.setState({ startDateError: true, succes: false, serverError: false, errorChange: false })
         } else {
-            axios.post('https://localhost:50111/api/editsemester', this.state)
+            axios.post('https://phd.inf.unideb.hu/api/editsemester', this.state)
                 .then(response => {
                     this.setState({ succes: true, errorChange: false, serverError: false, startDateError: false })
                 })

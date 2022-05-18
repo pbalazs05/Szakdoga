@@ -17,7 +17,7 @@ router.use(cors());
 //function to read a template file and create a new with input data
 function createFile(userInputData, username) {
     //const templateFile = fs.readFileSync(path.resolve(__dirname, 'phdTemplate.docx'), 'binary');
-    const templateFile = fs.readFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/phd_ved_biz.docx'), 'binary');
+    const templateFile = fs.readFileSync(path.resolve('/home/admin/phd_ved_biz.docx'), 'binary');
     const zip = new PizZip(templateFile);
     try {
         // Attempt to read all the templated tags
@@ -35,7 +35,7 @@ function createFile(userInputData, username) {
 
             // Save the buffer to a file
             //fs.writeFileSync(path.resolve(__dirname, 'OUTPUT3.docx'), outputDocumentBuffer);
-            fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/' + username + ' ' + 'Doctoral Dissertation Defense Committee.docx'), outputDocumentBuffer)
+            fs.writeFileSync(path.resolve('/home/admin/Documents/' + username + ' ' + 'Doctoral Dissertation Defense Committee.docx'), outputDocumentBuffer)
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
@@ -64,7 +64,7 @@ router.post('/download', cors({
   }),async (req, res) => {
     try{
         const fileName = req.body.value+' Doctoral Dissertation Defense Committee.docx';
-        const fileUrl = 'C:\\Users\\palba\\Documents\\Phd_oldal\\Documents\\'+fileName;
+        const fileUrl = '/home/admin/Documents'+fileName;
         const stream = fs.createReadStream(fileUrl);
         res.download(fileUrl,fileName,stream);
         res.header({

@@ -20,7 +20,7 @@ function Felvetel() {
 
     const fetchItems = async () => {
         const data = await fetch(
-            'https://localhost:50111/api/posts/' + Userdata.GetUserID()
+            'https://phd.inf.unideb.hu/api/posts/' + Userdata.GetUserID()
 
         );
         const items = await data.json();
@@ -29,7 +29,7 @@ function Felvetel() {
 
     const fetchDate = async () => {
         const data = await fetch(
-            'https://localhost:50111/api/editsemester/' + Userdata.GetUserID() + '/getdates'
+            'https://phd.inf.unideb.hu/api/editsemester/' + Userdata.GetUserID() + '/getdates'
         );
         const dates = await data.json();
         setDates(dates);
@@ -38,7 +38,7 @@ function Felvetel() {
 
     const fetchSubjectItems = async () => {
         const subjectdata = await fetch(
-            'https://localhost:50111/api/subjects'
+            'https://phd.inf.unideb.hu/api/subjects'
         );
         const Subjectitems = await subjectdata.json();
         setSubjectItems(Subjectitems);
@@ -47,7 +47,7 @@ function Felvetel() {
 
     const fetchTeacherNames = async () => {
         const teachername = await fetch(
-            'https://localhost:50111/api/NameAndEmail'
+            'https://phd.inf.unideb.hu/api/NameAndEmail'
         );
         const Teachernames = await teachername.json();
         setTeacherNames(Teachernames);

@@ -18,7 +18,7 @@ class Subjectupdate extends Component {
         }
     }
     async componentDidMount() {
-        axios.get('https://localhost:50111/api/posts/' + Params.get('uid') + '/' + Params.get('pid'))
+        axios.get('https://phd.inf.unideb.hu/api/posts/' + Params.get('uid') + '/' + Params.get('pid'))
         .then(res => {
             if (res.data === "error" || res.data.length === 0) {
                 this.setState({
@@ -34,7 +34,7 @@ class Subjectupdate extends Component {
                     subject: data[0].targy
                 })
 
-                axios.get('https://localhost:50111/api/getusers/' + Params.get('uid'))
+                axios.get('https://phd.inf.unideb.hu/api/getusers/' + Params.get('uid'))
                     .then(res => {
                         if (res.data === "error" || res.data.length === 0) {
                             this.setState({
@@ -47,7 +47,7 @@ class Subjectupdate extends Component {
                         })
 
 
-                        axios.get('https://localhost:50111/api/nameandemail/' + Params.get('aid'))
+                        axios.get('https://phd.inf.unideb.hu/api/nameandemail/' + Params.get('aid'))
                             .then(res => {
                                 const data = res.data;
                                 const Name = data[0].TeacherName
@@ -64,7 +64,7 @@ class Subjectupdate extends Component {
     }
 
     SubmitHandler = e => {
-        axios.patch('https://localhost:50111/api/subjectupdate/teacher/' + Params.get('uid') + '/' + Params.get('pid') + '/' + Params.get('key'), this.state)
+        axios.patch('https://phd.inf.unideb.hu/api/subjectupdate/teacher/' + Params.get('uid') + '/' + Params.get('pid') + '/' + Params.get('key'), this.state)
             .then(response => {
                 if (response.data === "success") {
                     this.setState({

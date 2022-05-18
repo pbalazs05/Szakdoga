@@ -12,7 +12,7 @@ function TakenCourses() {
 
     const fetchItems = async () => {
         const data = await fetch(
-            'https://localhost:50111/api/posts/' + Userdata.GetUserID() + '/history/h'
+            'https://phd.inf.unideb.hu/api/posts/' + Userdata.GetUserID() + '/history/h'
 
         );
 

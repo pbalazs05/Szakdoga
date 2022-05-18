@@ -108,7 +108,7 @@ class ExaminationBoard extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/examboard', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/examboard', this.state)
             .then(response => {
                 alert("Biztos el akarod menteni?");
                 refreshPage()
@@ -126,7 +126,7 @@ class ExaminationBoard extends Component {
         const fileName = this.state.name + " PhD complex exam committee.docx";
         axios({
             method: 'post',
-            url: 'https://localhost:50111/api/examboard/download',
+            url: 'https://phd.inf.unideb.hu/api/examboard/download',
             responseType: 'blob',
             headers: {},
             data: { type: 'string', value: this.state.name },

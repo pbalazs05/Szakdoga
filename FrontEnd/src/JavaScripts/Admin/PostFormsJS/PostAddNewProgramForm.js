@@ -28,7 +28,7 @@ class PostAddNewSubjectForm extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/getdoctoralprograms', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/getdoctoralprograms', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()
@@ -41,7 +41,7 @@ class PostAddNewSubjectForm extends Component {
 
     SubmitHandlerForDelete = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/deleteprograms', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/deleteprograms', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()
@@ -71,7 +71,7 @@ class PostAddNewSubjectForm extends Component {
 
     SubmitHandlerForEdit = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/editdoctoralprograms', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/editdoctoralprograms', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()

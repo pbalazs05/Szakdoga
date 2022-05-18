@@ -10,7 +10,7 @@ function refreshPage() {
 
 async function Check() {
     const token = ({ token: auth.isAuthenticated() });
-    await axios.post('https://localhost:50111/api/adminlogin/allow/' + AdminData.GetAdminID(), token).then(() => {
+    await axios.post('https://phd.inf.unideb.hu/api/adminlogin/allow/' + AdminData.GetAdminID(), token).then(() => {
     }).catch(error => {
         sessionStorage.clear();
         refreshPage();

@@ -14,7 +14,7 @@ function DoctoralDissertationDefense() {
 
     const fetchItems = async () => {
         const data = await fetch(
-            'https://localhost:50111/api/DissertationDefense'
+            'https://phd.inf.unideb.hu/api/DissertationDefense'
         );
         const items = await data.json();
         setItems(items);

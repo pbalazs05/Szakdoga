@@ -36,7 +36,7 @@ class PostAdminAdministration extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/getteachers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/getteachers', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()
@@ -49,7 +49,7 @@ class PostAdminAdministration extends Component {
 
     SubmitHandlerForEdit = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/editadmins', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/editadmins', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()
@@ -73,7 +73,7 @@ class PostAdminAdministration extends Component {
 
     SubmitHandlerForDelete = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/deleteadmins', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/deleteadmins', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()
@@ -86,7 +86,7 @@ class PostAdminAdministration extends Component {
 
     SubmitHandlerForGenerate = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/gennewpassforadmin', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/gennewpassforadmin', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()

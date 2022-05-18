@@ -159,7 +159,7 @@ class PostDoctoralDissertation extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/DissertationDefense', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/DissertationDefense', this.state)
             .then(response => {
                 alert("Biztos el akarod menteni?");
                 refreshPage()
@@ -177,7 +177,7 @@ class PostDoctoralDissertation extends Component {
         const fileName = this.state.name + " Doctoral Dissertation Defense Committee.docx";
         axios({
             method: 'post',
-            url: 'https://localhost:50111/api/DissertationDefense/download',
+            url: 'https://phd.inf.unideb.hu/api/DissertationDefense/download',
             responseType: 'blob',
             headers: {},
             data: { type: 'string', value: this.state.name },

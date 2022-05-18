@@ -12,7 +12,7 @@ function Subjects() {
     const [items, setItems] = useState([]);
 
     const fetchItems = async () => {
-        const data = await fetch('https://localhost:50111/api/getteachers');
+        const data = await fetch('https://phd.inf.unideb.hu/api/getteachers');
         const items = await data.json();
         setItems(items);
     };

@@ -30,7 +30,7 @@ class PostAddNewTeacher extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/getteachers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/getteachers', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()
@@ -43,7 +43,7 @@ class PostAddNewTeacher extends Component {
 
     SubmitHandlerForEdit = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/editteachers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/editteachers', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()
@@ -56,7 +56,7 @@ class PostAddNewTeacher extends Component {
 
     SubmitHandlerForDelete = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/deleteteachers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/deleteteachers', this.state)
             .then(response => {
                 alert(response.data);
                 refreshPage()

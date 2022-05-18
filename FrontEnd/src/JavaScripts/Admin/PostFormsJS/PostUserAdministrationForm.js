@@ -67,7 +67,7 @@ class PostUserAdministration extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/getteachers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/getteachers', this.state)
             .then(response => {
                 alert(response.data);
                 this.refreshPage()
@@ -80,7 +80,7 @@ class PostUserAdministration extends Component {
 
     SubmitHandlerForEdit = event => {
         event.preventDefault()
-        axios.post('https://localhost:50111/api/editusers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/editusers', this.state)
             .then(response => {
                 alert(response.data);
                 this.refreshPage()
@@ -111,7 +111,7 @@ class PostUserAdministration extends Component {
 
     SubmitHandlerForDelete = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/deleteusers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/deleteusers', this.state)
             .then(response => {
                 alert(response.data);
                 this.refreshPage()
@@ -124,7 +124,7 @@ class PostUserAdministration extends Component {
 
     SubmitHandlerForGenerateUserPass = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/gennewpassforusers', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/gennewpassforusers', this.state)
             .then(response => {
                 alert(response.data);
                 this.refreshPage()
@@ -136,7 +136,7 @@ class PostUserAdministration extends Component {
     }
     SubmitHandlerForAddNewSemester = event => {
         event.preventDefault()
-        axios.post('https://localhost:50111/api/editusers/addnewsemester', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/editusers/addnewsemester', this.state)
             .then(response => {
                 alert(response.data);
                 this.refreshPage()

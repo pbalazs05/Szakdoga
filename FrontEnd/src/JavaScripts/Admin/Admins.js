@@ -13,7 +13,7 @@ function Users() {
     const [items, setItems] = useState([]);
 
     const fetchItems = async () => {
-        const data = await fetch('https://localhost:50111/api/getadmins');
+        const data = await fetch('https://phd.inf.unideb.hu/api/getadmins');
         const items = await data.json();
         setItems(items);
     };

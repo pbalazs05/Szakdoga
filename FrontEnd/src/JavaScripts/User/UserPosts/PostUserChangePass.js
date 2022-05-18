@@ -21,7 +21,7 @@ class ChangeUserPass extends Component {
     }
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/changeuserpass', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/changeuserpass', this.state)
             .then(response => {
                 alert(response.data);
                 this.setState({

@@ -10,7 +10,7 @@ function Semester() {
     const [semesterData, setSemesterData] = useState([]);
 
     const fetchdates = async () => {
-        const data = await fetch('https://localhost:50111/api/editsemester');
+        const data = await fetch('https://phd.inf.unideb.hu/api/editsemester');
         const semesterData = await data.json();
         setSemesterData(semesterData);
     };

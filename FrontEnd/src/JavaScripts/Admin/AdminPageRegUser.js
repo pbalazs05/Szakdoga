@@ -17,13 +17,13 @@ function AdminPageRegUser() {
     const [Teachernames, setTeacherNames] = useState([]);
 
     const fetchItems = async () => {
-        const data = await fetch('https://localhost:50111/api/getdoctoralprograms');
+        const data = await fetch('https://phd.inf.unideb.hu/api/getdoctoralprograms');
         const items = await data.json();
         setItems(items);
     };
 
     const fetchTeacherNames = async () => {
-        const teachername = await fetch('https://localhost:50111/api/NameAndEmail');
+        const teachername = await fetch('https://phd.inf.unideb.hu/api/NameAndEmail');
         const Teachernames = await teachername.json();
         setTeacherNames(Teachernames);
     };

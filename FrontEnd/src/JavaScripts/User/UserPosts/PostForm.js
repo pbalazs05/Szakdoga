@@ -97,7 +97,7 @@ class PostForm extends Component {
 
     SubmitHandler = e => {
         e.preventDefault()
-        axios.post('https://localhost:50111/api/posts', this.state)
+        axios.post('https://phd.inf.unideb.hu/api/posts', this.state)
             .then(response => {
                 this.props.onPostSubmit(response.data)
                 this.setState({ succes: true, error: false })
