@@ -52,7 +52,7 @@ function App() {
                     <SecuredRouteAsUser path="/subject-registration" component={Felvetel} />
                     <SecuredRouteAsUser path="/graduation" component={Abszolvalt} />
                     <SecuredRouteAsUser path="/examination-board" component={PhdExaminationBoard} />
-                    <SecuredRouteAsUser path="/dissertation-defense-committee" component={DoctoralDissertationDefenseCommitte}/>
+                    <SecuredRouteAsUser path="/DissertationDefense" component={DoctoralDissertationDefenseCommitte}/>
                 </Switch>
             </div>
         </Router>

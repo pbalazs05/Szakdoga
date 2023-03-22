@@ -106,11 +106,14 @@ class ExaminationBoard extends Component {
 
     }
 
+    /**
+     *Fájl mentése a szerverre
+     */
     SubmitHandler = e => {
         e.preventDefault()
         axios.post('https://localhost:50111/api/examboard', this.state)
             .then(response => {
-                alert("Biztos el akarod menteni?");
+                alert("Do you want to save it to the server?");
                 refreshPage()
             })
             .catch(error => {

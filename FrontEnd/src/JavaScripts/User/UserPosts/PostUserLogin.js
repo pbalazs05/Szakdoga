@@ -5,7 +5,7 @@ import '../../../Style/adminpage.css';
 import auth from "../UserAuth";
 import UserData from '../UserDataGetSet';
 
-class PostLoginUserForm extends Component {
+class PostUserLogin extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -98,4 +98,4 @@ class PostLoginUserForm extends Component {
     }
 }
 
-export default PostLoginUserForm;
+export default PostUserLogin;

@@ -11,30 +11,22 @@ var cors = require('cors');
 router.use(cors());
 
 /**
- * Fájl létrehozást és letöltést kezelő függvény
+ * Fájl létrehozás
  * Beolvassa a phd_ved_biz.docx fájlt és az alapján csinál egy újat és bele írja az input adatokat
  */
-//function to read a template file and create a new with input data
 function createFile(userInputData, username) {
-    //const templateFile = fs.readFileSync(path.resolve(__dirname, 'phdTemplate.docx'), 'binary');
+
     const templateFile = fs.readFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/phd_ved_biz.docx'), 'binary');
     const zip = new PizZip(templateFile);
     try {
-        // Attempt to read all the templated tags
-        let outputDocument = new Docxtemplater(zip);
 
-        // Set the data we wish to add to the document
+        let outputDocument = new Docxtemplater(zip);
         outputDocument.setData(userInputData);
 
         try {
-            // Attempt to render the document (Add data to the template)
+
             outputDocument.render()
-
-            // Create a buffer to store the output data
             let outputDocumentBuffer = outputDocument.getZip().generate({ type: 'nodebuffer' });
-
-            // Save the buffer to a file
-            //fs.writeFileSync(path.resolve(__dirname, 'OUTPUT3.docx'), outputDocumentBuffer);
             fs.writeFileSync(path.resolve('/Users/palba/Documents/Phd_oldal/Documents/' + username + ' ' + 'Doctoral Dissertation Defense Committee.docx'), outputDocumentBuffer)
         }
         catch (error) {
@@ -69,7 +61,7 @@ router.post('/download', cors({
         res.download(fileUrl,fileName,stream);
         res.header({
             'Content-Disposition': `attachment; filename='${fileName}'`,
-            'Content-Type': 'application/docx',
+            'Content-Type': 'application/json',
         });
         stream.on('error', function (err) {res.end(err);});
 
@@ -86,7 +78,6 @@ router.post('/download', cors({
 router.post('/', async (req, res) => {
     const post = new Post({
         username: req.body.username,
-
     });
 
     try {

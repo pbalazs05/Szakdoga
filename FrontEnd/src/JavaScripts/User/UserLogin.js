@@ -1,7 +1,7 @@
 import React from 'react';
 import DeIkLogo from '../../Style/DeIKLogo.png'
 import '../../Style/style.css';
-import PostLoginUserForm from './UserPosts/PostUserLogin';
+import PostUserLogin from './UserPosts/PostUserLogin';
 
 function LoginUser() {
     return (
@@ -19,7 +19,7 @@ function LoginUser() {
                         <div className="error-messages">
                         </div>
                         <br />
-                        <PostLoginUserForm />
+                        <PostUserLogin />
                     </div>
                 </div>
             </div>

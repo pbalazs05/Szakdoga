@@ -39,7 +39,7 @@ function Nav() {
                             <button className="dropbtnnav">Documents</button>
                             <div className="dropdown-contentnav">
                                 <a href="/examination-board">Suggestion for the PhD exam committee composition</a>
-                                <a href="/dissertation-defense-committee">Suggestion for dissertation defense committee composition</a>
+                                <a href="/DissertationDefense">Suggestion for dissertation defense committee composition</a>
                             </div>
                         </div>
                     </li>

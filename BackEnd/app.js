@@ -103,10 +103,10 @@ db.once('open', () => console.log('connected'))
  const key = fs.readFileSync('./cert/localhost/localhost.decrypted.key');
  const cert = fs.readFileSync('./cert/localhost/localhost.crt');
 
-app.get('/', (reg, res, next) => {
+app.all('/', (reg, res, next) => {
     res.status(200);
     res.setHeader('Acces-Control-Allow-Origin', '*');
-    res.setHeader('Acces-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Acces-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE, OPTIONS');
     res.setHeader('Acces-Contorl-Allow-Methods', 'Content-Type', 'Authorization');
     res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
     next();
@@ -117,4 +117,3 @@ const port = 50111;
 server.listen(port, () => {
     console.log(`Server is listening on https://localhost:${port}`);
 });
-//

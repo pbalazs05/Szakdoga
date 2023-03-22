@@ -4,7 +4,6 @@ import React, {useState, useEffect} from 'react';
 import PostDoctoralDissertation from './UserPosts/PostDoctoralDissertationDefense';
 
 
-
 function DoctoralDissertationDefense() {
     useEffect(() => {
         fetchItems();

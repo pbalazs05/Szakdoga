@@ -157,11 +157,14 @@ class PostDoctoralDissertation extends Component {
         }
     }
 
+    /**
+     *Fájl mentése a szerverre
+     */
     SubmitHandler = e => {
         e.preventDefault()
         axios.post('https://localhost:50111/api/DissertationDefense', this.state)
             .then(response => {
-                alert("Biztos el akarod menteni?");
+                alert("Do you want to save it to the server?");
                 refreshPage()
             })
             .catch(error => {
@@ -173,7 +176,8 @@ class PostDoctoralDissertation extends Component {
     /**
      * Fájl letöltést kezelő függvény
      */
-    downloadHandler = (e) => {
+    downloadHandler = e => {
+        e.preventDefault()
         const fileName = this.state.name + " Doctoral Dissertation Defense Committee.docx";
         axios({
             method: 'post',
@@ -234,15 +238,15 @@ class PostDoctoralDissertation extends Component {
                 </div>
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Languange Exams (level and date) :</span>
-                    <input className="inputstilo" type="text" name="LanguageExams" value={this.state.LanguageExams} onChange={e => this.setState({ LanguageExams: e.target.value })} required />
+                    <input className="inputstilo" type="text" name="LanguageExams" value={this.state.LanguageExams} onChange={e => this.setState({ LanguageExams: e.target.value })}  />
                 </div>
                 <div className="ThreeDivInLine"  >
                     <span className="txt11"> Date of preliminary discussion:</span>
-                    <input className="inputstilo" type="text" name="priorDiscussion" value={this.state.priorDiscussion} onChange={e => this.setState({ priorDiscussion: e.target.value })} required />
+                    <input className="inputstilo" type="text" name="priorDiscussion" value={this.state.priorDiscussion} onChange={e => this.setState({ priorDiscussion: e.target.value })}  />
                 </div>
                 <div className="ThreeDivInLine" >
                     <span className="txt11"> Evaluation of the Doctoral School:</span>
-                    <input className="inputstilo" type="text" name="doctoralSchoolEvaluation" value={this.doctoralSchoolEvaluation} onChange={e => this.setState({ doctoralSchoolEvaluation: e.target.value })} required />
+                    <input className="inputstilo" type="text" name="doctoralSchoolEvaluation" value={this.doctoralSchoolEvaluation} onChange={e => this.setState({ doctoralSchoolEvaluation: e.target.value })}  />
                 </div>
 
                 <div style={{ display: 'flex', width: "95%", marginLeft: "auto", marginRight: "auto" }} >
@@ -296,8 +300,8 @@ class PostDoctoralDissertation extends Component {
                             <tr>
                                 <td className="BoldFontStyle" >Reserve Chair</td>
                                 <td className="BoldFontStyle" >Internal</td>
-                                <td><input className="tdInput" type="text" name="reservePresidentName" value={this.reservePresidentName} onChange={e => this.setState({ reservePresidentName: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="reservePresidentPosition" value={this.reservePresidentPosition} onChange={e => this.setState({ reservePresidentPosition: e.target.value })} required list="positions" ></input>
+                                <td><input className="tdInput" type="text" name="reservePresidentName" value={this.reservePresidentName} onChange={e => this.setState({ reservePresidentName: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="reservePresidentPosition" value={this.reservePresidentPosition} onChange={e => this.setState({ reservePresidentPosition: e.target.value })}  list="positions" ></input>
                                     <datalist id = "positions">
                                         <option>Rector</option>
                                         <option>Dean</option>
@@ -307,25 +311,25 @@ class PostDoctoralDissertation extends Component {
                                         <option>Teaching assistant</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="reservePresidentRank" value={this.reservePresidentRank} onChange={e => this.setState({ reservePresidentRank: e.target.value })} list="ranks" required ></input>
+                                <td><input className="tdInput" type="text" name="reservePresidentRank" value={this.reservePresidentRank} onChange={e => this.setState({ reservePresidentRank: e.target.value })} list="ranks"  ></input>
                                     <datalist id = "ranks">
                                         <option>PhD</option>
                                         <option>CSc</option>
                                         <option>DSc</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="reservePresidentInstitution" value={this.reservePresidentInstitution} onChange={e => this.setState({ reservePresidentInstitution: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="reservePresidentDepartment" value={this.reservePresidentDepartment} onChange={e => this.setState({ reservePresidentDepartment: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="reservePresidentPostCode" value={this.reservePresidentPostCode} onChange={e => this.setState({ reservePresidentPostCode: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="reservePresidentLocation" value={this.reservePresidentLocation} onChange={e => this.setState({ reservePresidentLocation: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="reservePresidentStreet" value={this.reservePresidentStreet} onChange={e => this.setState({ reservePresidentStreet: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="reservePresidentEmail" value={this.reservePresidentEmail} onChange={e => this.setState({ reservePresidentEmail: e.target.value })} required ></input></td>
+                                <td><input className="tdInput" type="text" name="reservePresidentInstitution" value={this.reservePresidentInstitution} onChange={e => this.setState({ reservePresidentInstitution: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="reservePresidentDepartment" value={this.reservePresidentDepartment} onChange={e => this.setState({ reservePresidentDepartment: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="reservePresidentPostCode" value={this.reservePresidentPostCode} onChange={e => this.setState({ reservePresidentPostCode: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="reservePresidentLocation" value={this.reservePresidentLocation} onChange={e => this.setState({ reservePresidentLocation: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="reservePresidentStreet" value={this.reservePresidentStreet} onChange={e => this.setState({ reservePresidentStreet: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="reservePresidentEmail" value={this.reservePresidentEmail} onChange={e => this.setState({ reservePresidentEmail: e.target.value })}  ></input></td>
                             </tr>
                             <tr>
                                 <td className="BoldFontStyle" >Member</td>
                                 <td className="BoldFontStyle" >Internal</td>
-                                <td><input className="tdInput" type="text" name="memberOneName" value={this.memberOneName} onChange={e => this.setState({ memberOneName: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberOnePosition" value={this.memberOnePosition} onChange={e => this.setState({ memberOnePosition: e.target.value })} required list="positions"></input>
+                                <td><input className="tdInput" type="text" name="memberOneName" value={this.memberOneName} onChange={e => this.setState({ memberOneName: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberOnePosition" value={this.memberOnePosition} onChange={e => this.setState({ memberOnePosition: e.target.value })}  list="positions"></input>
                                     <datalist id = "positions">
                                         <option>Rector</option>
                                         <option>Dean</option>
@@ -335,25 +339,25 @@ class PostDoctoralDissertation extends Component {
                                         <option>Teaching assistant</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberOneRank" value={this.memberOneRank} onChange={e => this.setState({ memberOneRank: e.target.value })} list="ranks" required ></input>
+                                <td><input className="tdInput" type="text" name="memberOneRank" value={this.memberOneRank} onChange={e => this.setState({ memberOneRank: e.target.value })} list="ranks"  ></input>
                                     <datalist id = "ranks">
                                         <option>PhD</option>
                                         <option>CSc</option>
                                         <option>DSc</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberOneInstitution" value={this.memberOneInstitution} onChange={e => this.setState({ memberOneInstitution: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberOneDepartment" value={this.memberOneDepartment} onChange={e => this.setState({ memberOneDepartment: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberOnePostCode" value={this.memberOnePostCode} onChange={e => this.setState({ memberOnePostCode: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberOneLocation" value={this.memberOneLocation} onChange={e => this.setState({ memberOneLocation: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberOneStreet" value={this.memberOneStreet} onChange={e => this.setState({ memberOneStreet: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberOneEmail" value={this.memberOneEmail} onChange={e => this.setState({ memberOneEmail: e.target.value })} required ></input></td>
+                                <td><input className="tdInput" type="text" name="memberOneInstitution" value={this.memberOneInstitution} onChange={e => this.setState({ memberOneInstitution: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberOneDepartment" value={this.memberOneDepartment} onChange={e => this.setState({ memberOneDepartment: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberOnePostCode" value={this.memberOnePostCode} onChange={e => this.setState({ memberOnePostCode: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberOneLocation" value={this.memberOneLocation} onChange={e => this.setState({ memberOneLocation: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberOneStreet" value={this.memberOneStreet} onChange={e => this.setState({ memberOneStreet: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberOneEmail" value={this.memberOneEmail} onChange={e => this.setState({ memberOneEmail: e.target.value })}  ></input></td>
                             </tr>
                             <tr>
                                 <td className="BoldFontStyle" >Member</td>
                                 <td className="BoldFontStyle" >Internal</td>
-                                <td><input className="tdInput" type="text" name="memberTwoName" value={this.memberTwoName} onChange={e => this.setState({ memberTwoName: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberTwoPosition" value={this.memberTwoPosition} onChange={e => this.setState({ memberTwoPosition: e.target.value })} required list="positions"></input>
+                                <td><input className="tdInput" type="text" name="memberTwoName" value={this.memberTwoName} onChange={e => this.setState({ memberTwoName: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberTwoPosition" value={this.memberTwoPosition} onChange={e => this.setState({ memberTwoPosition: e.target.value })}  list="positions"></input>
                                     <datalist id = "positions">
                                         <option>Rector</option>
                                         <option>Dean</option>
@@ -363,25 +367,25 @@ class PostDoctoralDissertation extends Component {
                                         <option>Teaching assistant</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberTwoRank" value={this.memberTwoRank} onChange={e => this.setState({ memberTwoRank: e.target.value })} list="ranks" required ></input>
+                                <td><input className="tdInput" type="text" name="memberTwoRank" value={this.memberTwoRank} onChange={e => this.setState({ memberTwoRank: e.target.value })} list="ranks"  ></input>
                                     <datalist id = "ranks">
                                         <option>PhD</option>
                                         <option>CSc</option>
                                         <option>DSc</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberTwoInstitution" value={this.memberTwoInstitution} onChange={e => this.setState({ memberTwoInstitution: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberTwoDepartment" value={this.memberTwoDepartment} onChange={e => this.setState({ memberTwoDepartment: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberTwoPostCode" value={this.memberTwoPostCode} onChange={e => this.setState({ memberTwoPostCode: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberTwoLocation" value={this.memberTwoLocation} onChange={e => this.setState({ memberTwoLocation: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberTwoStreet" value={this.memberTwoStreet} onChange={e => this.setState({ memberTwoStreet: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberTwoEmail" value={this.memberTwoEmail} onChange={e => this.setState({ memberTwoEmail: e.target.value })} required ></input></td>
+                                <td><input className="tdInput" type="text" name="memberTwoInstitution" value={this.memberTwoInstitution} onChange={e => this.setState({ memberTwoInstitution: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberTwoDepartment" value={this.memberTwoDepartment} onChange={e => this.setState({ memberTwoDepartment: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberTwoPostCode" value={this.memberTwoPostCode} onChange={e => this.setState({ memberTwoPostCode: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberTwoLocation" value={this.memberTwoLocation} onChange={e => this.setState({ memberTwoLocation: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberTwoStreet" value={this.memberTwoStreet} onChange={e => this.setState({ memberTwoStreet: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberTwoEmail" value={this.memberTwoEmail} onChange={e => this.setState({ memberTwoEmail: e.target.value })}  ></input></td>
                             </tr>
                             <tr>
                                 <td className="BoldFontStyle" >Member</td>
                                 <td className="BoldFontStyle" >External</td>
-                                <td><input className="tdInput" type="text" name="memberThreePosition" value={this.memberThreeName} onChange={e => this.setState({ memberThreeName: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberThreePosition" value={this.memberThreePosition} onChange={e => this.setState({ memberThreePosition: e.target.value })} required list="positions" ></input>
+                                <td><input className="tdInput" type="text" name="memberThreePosition" value={this.memberThreeName} onChange={e => this.setState({ memberThreeName: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberThreePosition" value={this.memberThreePosition} onChange={e => this.setState({ memberThreePosition: e.target.value })}  list="positions" ></input>
                                     <datalist id = "positions">
                                         <option>Rector</option>
                                         <option>Dean</option>
@@ -391,25 +395,25 @@ class PostDoctoralDissertation extends Component {
                                         <option>Teaching assistant</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberThreeRank" value={this.memberThreeRank} onChange={e => this.setState({ memberThreeRank: e.target.value })} required list="ranks"></input>
+                                <td><input className="tdInput" type="text" name="memberThreeRank" value={this.memberThreeRank} onChange={e => this.setState({ memberThreeRank: e.target.value })}  list="ranks"></input>
                                     <datalist id = "ranks">
                                         <option>PhD</option>
                                         <option>CSc</option>
                                         <option>DSc</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberThreeInstitution" value={this.memberThreeInstitution} onChange={e => this.setState({ memberThreeInstitution: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberThreeDepartment" value={this.memberThreeDepartment} onChange={e => this.setState({ memberThreeDepartment: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberThreePostCode" value={this.memberThreePostCode} onChange={e => this.setState({ memberThreePostCode: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberThreeLocation" value={this.memberThreeLocation} onChange={e => this.setState({ memberThreeLocation: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberThreeStreet" value={this.memberThreeStreet} onChange={e => this.setState({ memberThreeStreet: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberThreeEmail" value={this.memberThreeEmail} onChange={e => this.setState({ memberThreeEmail: e.target.value })} required ></input></td>
+                                <td><input className="tdInput" type="text" name="memberThreeInstitution" value={this.memberThreeInstitution} onChange={e => this.setState({ memberThreeInstitution: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberThreeDepartment" value={this.memberThreeDepartment} onChange={e => this.setState({ memberThreeDepartment: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberThreePostCode" value={this.memberThreePostCode} onChange={e => this.setState({ memberThreePostCode: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberThreeLocation" value={this.memberThreeLocation} onChange={e => this.setState({ memberThreeLocation: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberThreeStreet" value={this.memberThreeStreet} onChange={e => this.setState({ memberThreeStreet: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberThreeEmail" value={this.memberThreeEmail} onChange={e => this.setState({ memberThreeEmail: e.target.value })}  ></input></td>
                             </tr>
                             <tr>
                                 <td className="BoldFontStyle" >Member</td>
                                 <td className="BoldFontStyle" >External</td>
-                                <td><input className="tdInput" type="text" name="memberFourName" value={this.memberFourName} onChange={e => this.setState({ memberFourName: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberFourPosition" value={this.memberFourPosition} onChange={e => this.setState({ memberFourPosition: e.target.value })} required list="positions"></input>
+                                <td><input className="tdInput" type="text" name="memberFourName" value={this.memberFourName} onChange={e => this.setState({ memberFourName: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberFourPosition" value={this.memberFourPosition} onChange={e => this.setState({ memberFourPosition: e.target.value })}  list="positions"></input>
                                     <datalist id = "positions">
                                         <option>Rector</option>
                                         <option>Dean</option>
@@ -419,19 +423,19 @@ class PostDoctoralDissertation extends Component {
                                         <option>Teaching assistant</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberFourRank" value={this.memberFourRank} onChange={e => this.setState({ memberFourRank: e.target.value })} list="ranks" required ></input>
+                                <td><input className="tdInput" type="text" name="memberFourRank" value={this.memberFourRank} onChange={e => this.setState({ memberFourRank: e.target.value })} list="ranks"  ></input>
                                     <datalist id = "ranks">
                                         <option>PhD</option>
                                         <option>CSc</option>
                                         <option>DSc</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="memberFourInstitution" value={this.memberFourInstitution} onChange={e => this.setState({ memberFourInstitution: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberFourDepartment" value={this.memberFourDepartment} onChange={e => this.setState({ memberFourDepartment: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberFourPostCode" value={this.memberFourPostCode} onChange={e => this.setState({ memberFourPostCode: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberFourLocation" value={this.memberFourLocation} onChange={e => this.setState({ memberFourLocation: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberFourStreet" value={this.memberFourStreet} onChange={e => this.setState({ memberFourStreet: e.target.value })} required ></input></td>
-                                <td><input className="tdInput" type="text" name="memberFourEmail" value={this.memberFourEmail} onChange={e => this.setState({ memberFourEmail: e.target.value })} required ></input></td>
+                                <td><input className="tdInput" type="text" name="memberFourInstitution" value={this.memberFourInstitution} onChange={e => this.setState({ memberFourInstitution: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberFourDepartment" value={this.memberFourDepartment} onChange={e => this.setState({ memberFourDepartment: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberFourPostCode" value={this.memberFourPostCode} onChange={e => this.setState({ memberFourPostCode: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberFourLocation" value={this.memberFourLocation} onChange={e => this.setState({ memberFourLocation: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberFourStreet" value={this.memberFourStreet} onChange={e => this.setState({ memberFourStreet: e.target.value })}  ></input></td>
+                                <td><input className="tdInput" type="text" name="memberFourEmail" value={this.memberFourEmail} onChange={e => this.setState({ memberFourEmail: e.target.value })}  ></input></td>
                             </tr>
                             <tr>
                                 <td className="BoldFontStyle" >Reserve Member</td>
@@ -504,7 +508,7 @@ class PostDoctoralDissertation extends Component {
                                         <option>Teaching assistant</option>
                                     </datalist>
                                 </td>
-                                <td><input className="tdInput" type="text" name="ReviewerOneRank" value={this.ReviewerOneRank} onChange={e => this.setState({ ReviewerOneRank: e.target.value })} list="ranks" required ></input>
+                                <td><input className="tdInput" type="text" name="ReviewerOneRank" value={this.ReviewerOneRank} onChange={e => this.setState({ ReviewerOneRank: e.target.value })} list="ranks"  ></input>
                                     <datalist id = "ranks">
                                         <option>PhD</option>
                                         <option>CSc</option>
